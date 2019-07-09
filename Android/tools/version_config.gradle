@@ -1,0 +1,25 @@
+ext {
+    javaSourceCompatibility = JavaVersion.VERSION_1_8
+    appVersions = '0.0.1'
+    appCode = 1
+    compileSdkVersion = 27
+    buildToolsVersion = "27.0.3"
+    minSdkVersion = 17
+    targetSdkVersion = 26
+
+    sdk = [
+            support         : '27.1.1',
+            multidex        : '1.0.3',
+            constraintLayout: '1.1.2',
+    ]
+
+    appcompatV7 = "com.android.support:appcompat-v7:$sdk.support"
+    constraintLayout = "com.android.support.constraint:constraint-layout:$sdk.constraintLayout"
+
+    libVersions = [
+            gradleTool  : '3.1.4',
+            FastJson    : '1.1.70.android',
+            gson        : '2.8.5',
+            fataar      : '1.1.7'
+    ]
+}

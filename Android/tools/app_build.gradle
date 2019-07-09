@@ -1,0 +1,11 @@
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        if (variant.buildType.name == "atest") {
+            outputFileName = "app-testa-${variant.versionName}.apk"
+        } else if (variant.buildType.name == "btest") {
+            outputFileName = "app-testb-${variant.versionName}.apk"
+        } else {
+            outputFileName = "app-${variant.buildType.name}-${variant.versionName}.apk"
+        }
+    }
+}

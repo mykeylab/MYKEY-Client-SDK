@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply from: "$project.rootDir/tools/version_config.gradle"
+apply from: "$project.rootDir/tools/app_build.gradle"
+
+android {
+    compileSdkVersion getProject().compileSdkVersion
+    defaultConfig {
+        applicationId "com.mykey.sdk.mykeysimple"
+        minSdkVersion getProject().minSdkVersion
+        targetSdkVersion getProject().targetSdkVersion
+        versionCode getProject().appCode
+        versionName getProject().appVersions
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file(KEYSTORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+//            v2SigningEnabled false
+        }
+        debug {
+            storeFile file(KEYSTORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true //使用代码混淆
+            zipAlignEnabled true //使用应用优化
+            shrinkResources false //移除未使用的资源
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false //使用代码混淆
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        pre.initWith(release)
+        pre {
+        }
+
+        atest.initWith(release)
+        atest {
+        }
+    }
+
+//    compileOptions {
+//        sourceCompatibility getProject().javaSourceCompatibility
+//        targetCompatibility getProject().javaSourceCompatibility
+//    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+repositories {
+    //指定aar目录
+    flatDir {
+        dirs 'libs'
+        dirs '../sdk/libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation getProject().appcompatV7
+
+    implementation getProject().constraintLayout
+
+    implementation project(":sdk")
+
+//    implementation(name: "MYKEYWalletLib", ext: 'aar')
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

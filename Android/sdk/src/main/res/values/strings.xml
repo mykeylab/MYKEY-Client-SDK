@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sdk</string>
+    <string name="error.txt.wake_up">无法唤醒MYKEY</string>
+
+    <string name="sdk_download.txt.title">MYKEY has not been installed yet</string>
+    <string name="sdk_download.btn.download">About MYKEY</string>
+</resources>

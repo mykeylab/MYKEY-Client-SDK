@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mykey.sdk.sample.SampleActivity">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+            <!--DeepLink-->
+            <TextView
+                android:id="@+id/mykey_sdk_deeplink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/title_black_light"
+                android:text="DeepLink"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <Button
+                android:id="@+id/deeplink_mykey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/title_black_light"
+                android:text="MYKEYHome"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@+id/mykey_sdk_deeplink"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/deeplink_dapp"/>
+
+            <Button
+                android:id="@+id/deeplink_dapp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/title_black_light"
+                android:text="DAppBigGame"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@+id/mykey_sdk_deeplink"
+                app:layout_constraintLeft_toRightOf="@+id/deeplink_mykey"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <!--初始化选择-->
+            <TextView
+                android:id="@+id/mykey_sdk_init_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/title_black_light"
+                android:text="Initialization mode"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/deeplink_dapp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <Button
+                android:id="@+id/mykey_sdk_init"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEYSdk"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/mykey_sdk_init_simple"
+                app:layout_constraintTop_toBottomOf="@+id/mykey_sdk_init_title"/>
+
+            <Button
+                android:id="@+id/mykey_sdk_init_simple"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEYSdkSimple"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/mykey_sdk_init"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mykey_sdk_init_title" />
+            <!--Simple Wallet + MYKEY Wallet-->
+            <TextView
+                android:id="@+id/simplewaller_mykeysdk_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/title_black_light"
+                android:text="SimpleWallet(SW)+MYKEYSdk"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/mykey_sdk_init"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <Button
+                android:id="@+id/simple_authorize_mykey"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Authorize"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_authorize_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/simplewaller_mykeysdk_title"/>
+
+            <Button
+                android:id="@+id/simple_authorize_simple_wallet"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="SW Authorize"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_authorize_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simplewaller_mykeysdk_title" />
+
+            <Button
+                android:id="@+id/simple_contract_mykey"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Contract"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_authorize_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/simple_authorize_mykey"/>
+
+            <Button
+                android:id="@+id/simple_contract_simple_wallet"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="SW Contract"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_contract_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simple_authorize_mykey" />
+
+            <Button
+                android:id="@+id/simple_transfer_mykey"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Transfer"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/simple_contract_mykey"/>
+
+            <Button
+                android:id="@+id/simple_transfer_simple_wallet"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="SW Transfer"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simple_contract_mykey" />
+
+            <Button
+                android:id="@+id/simple_sign_mykey"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Sign"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/simple_transfer_mykey"/>
+
+            <Button
+                android:id="@+id/simple_sign_simple_wallet"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="SW Sign"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simple_transfer_mykey" />
+
+            <!--EOS-Stake-Token API-->
+            <TextView
+                android:id="@+id/bihu_plugin_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/title_black_light"
+                android:text="EOS-Stake-Token API"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/simple_sign_mykey"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <Button
+                android:id="@+id/api_get_balance"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="GetKeyBalance"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/bihu_plugin_api"/>
+
+            <Button
+                android:id="@+id/api_get_unlock_list"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="GetUnlockList"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bihu_plugin_api" />
+
+            <Button
+                android:id="@+id/api_get_bind_info"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="GetBindInfo"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/api_get_balance"/>
+
+            <Button
+                android:id="@+id/empty"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="Empty"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/api_get_balance" />
+
+            <!--EOS-Stake-Token合约方法调用Example-->
+            <TextView
+                android:id="@+id/bihu_contract_example"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/title_black_light"
+                android:text="EOS-Stake-Token Contract Method Example"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/api_get_bind_info"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <Button
+                android:id="@+id/stake_token_contract_stake"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="Stake"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/bihu_contract_example"/>
+
+            <Button
+                android:id="@+id/stake_token_contract_unstake"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="Unstake"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bihu_contract_example" />
+
+            <Button
+                android:id="@+id/stake_token_contract_transfer"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="TransferNormal"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_stake"/>
+
+            <Button
+                android:id="@+id/stake_token_contract_transfer_stake"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="TransferAndStake"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_stake" />
+
+            <Button
+                android:id="@+id/stake_token_contract_unstake_transfer"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="UnstakeAndTransfer"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_transfer"/>
+
+            <Button
+                android:id="@+id/bihu_contract_empty"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="Empty"
+                android:textSize="16sp"
+                android:textColor="@color/title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_transfer" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
