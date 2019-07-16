@@ -14,4 +14,6 @@ This Project cotains the source code and demo code of MYKEY Client SDK
 
 ### IOS
 
-Coming Soon.
+[English](https://github.com/mykeylab/Documentation/blob/master/SDK(Draft)/MYKEY-iOS-SDK-EN.md)
+
+[Chinese](https://github.com/mykeylab/Documentation/blob/master/SDK(Draft)/MYKEY-iOS-SDK.md)
