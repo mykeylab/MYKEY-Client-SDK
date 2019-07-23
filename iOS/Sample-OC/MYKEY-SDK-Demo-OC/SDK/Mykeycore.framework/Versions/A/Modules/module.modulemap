@@ -1,0 +1,8 @@
+framework module "Mykeycore" {
+	header "ref.h"
+    header "Mykeycore.objc.h"
+    header "universe.objc.h"
+    header "Mykeycore.h"
+
+    export *
+}
