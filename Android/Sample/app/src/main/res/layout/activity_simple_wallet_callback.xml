@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textSize="34sp"
         android:text="SimpleWallet结果页"
-        android:textColor="@color/title_black_light"
+        android:textColor="@color/mykey_title_black_light"
         android:padding="20dp"
         />
     <TextView
@@ -19,6 +19,6 @@
         android:textSize="24sp"
         android:padding="20dp"
         android:lineSpacingExtra="10dp"
-        android:textColor="@color/title_black_light"
+        android:textColor="@color/mykey_title_black_light"
         app:layout_constraintTop_toBottomOf="@+id/simple_wallet_title"/>
 </android.support.constraint.ConstraintLayout>

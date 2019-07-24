@@ -11,6 +11,7 @@ public class InitSimpleRequest {
     private String dappIcon;
     // Whether to disable the default install page when MYKEY is not installed
     private boolean disableInstall = false;
+    private boolean showUpgradeTip = false;
     // Deeplink MYKEY callback to dapp,defined in AndroidManifest.xml, e.g. customscheme://customhost/custompath
     private String callback;
 
@@ -60,6 +61,15 @@ public class InitSimpleRequest {
 
     public InitSimpleRequest setDappIcon(String dappIcon) {
         this.dappIcon = dappIcon;
+        return this;
+    }
+
+    public boolean isShowUpgradeTip() {
+        return showUpgradeTip;
+    }
+
+    public InitSimpleRequest setShowUpgradeTip(boolean showUpgradeTip) {
+        this.showUpgradeTip = showUpgradeTip;
         return this;
     }
 }

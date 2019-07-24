@@ -144,6 +144,7 @@ public class SystemUtil {
 
     /**
      * 判断apk是否安装
+     *
      * @param context
      * @param packageName
      * @return true:已安装；false：未安装
@@ -165,5 +166,25 @@ public class SystemUtil {
         }
         //判断pName中是否有目标程序的包名，有TRUE，没有FALSE
         return pName.contains(packageName);
+    }
+
+    /**
+     * 判断是否安装
+     *
+     * @param context
+     * @param packageName
+     * @return true:已安装；false：未安装
+     */
+    public static boolean apkInstalledMethodTwo(Context context, String packageName) {
+        PackageManager packageManager = context.getPackageManager();
+        boolean hasInstallWx;
+        try {
+            PackageInfo packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_GIDS);
+            hasInstallWx = packageInfo != null;
+        } catch (PackageManager.NameNotFoundException e) {
+            hasInstallWx = false;
+            e.printStackTrace();
+        }
+        return hasInstallWx;
     }
 }

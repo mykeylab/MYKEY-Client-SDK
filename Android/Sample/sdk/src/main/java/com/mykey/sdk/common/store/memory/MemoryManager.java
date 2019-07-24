@@ -72,4 +72,12 @@ public class MemoryManager {
         }
         return "";
     }
+
+    public static boolean isShowUpgradeTip() {
+        Object obj = memoryMap.get(StoreKeyCons.MEMORY_KEY_SHOW_UPGRADE_TIP);
+        if (null != obj) {
+            return StringUtil.toBoolean(obj.toString());
+        }
+        return false;
+    }
 }

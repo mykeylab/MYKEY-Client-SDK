@@ -1,5 +1,7 @@
 package com.mykey.sdk.handle;
 
+import android.text.TextUtils;
+
 import com.mykey.sdk.common.constants.ConfigCons;
 import com.mykey.sdk.common.constants.StoreKeyCons;
 import com.mykey.sdk.common.store.memory.MemoryManager;
@@ -27,6 +29,7 @@ public class InitHandle {
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_APP_NAME, initRequest.getDappName());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_APP_ICON, initRequest.getDappIcon());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_CALLBACK_PAGE, initRequest.getCallback());
+        MemoryManager.set(StoreKeyCons.MEMORY_KEY_SHOW_UPGRADE_TIP, initRequest.isShowUpgradeTip());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_DISABLE_INSTALL, initRequest.isDisableInstall());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_PROTOCOL, initRequest.getProtocol());
 
@@ -34,7 +37,7 @@ public class InitHandle {
         InitEntity initEntity = new InitEntity();
         initEntity.setAppKey(initRequest.getAppKey());
         initEntity.setUserId(initRequest.getUuid().toString());
-        initEntity.setBaseUrl(ConfigCons.MYKEY_BASE_URL);
+        initEntity.setBaseUrl(TextUtils.isEmpty(initRequest.getMYKEYServer()) ? ConfigCons.MYKEY_BASE_URL : initRequest.getMYKEYServer());
         initEntity.setDevice(ConfigCons.DEVICE);
         initEntity.setSdkVersion(ConfigCons.SDK_VERSION);
         initEntity.setUuid(SystemUtil.getUUID());

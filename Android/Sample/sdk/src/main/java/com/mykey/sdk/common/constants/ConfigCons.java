@@ -5,7 +5,10 @@ package com.mykey.sdk.common.constants;
  */
 
 public interface ConfigCons {
-    String SDK_VERSION = "1.0.0";
+    // MYKEY Sdk Version
+    String MYKEY_WALLET_VERSION = "1.0";
+    // SDK Version
+    String SDK_VERSION = "1.0.1";
     String DEVICE = "android";
     // Package name of MYKEY
     String MYKEY_PACKAGE_NAME = "com.mykey.id";
@@ -20,12 +23,10 @@ public interface ConfigCons {
     // the format deep link url for Simple Wallet, need fill in data
     String SIMPLE_WALLET_URL_FORMAT = "simplewallet://eos.io?param=%s";
 
-    String MYKEY_BASE_URL = "https://dev-app.mykey.tech";
+    String MYKEY_BASE_URL = "https://app.mykey.tech";
     // the product url of MYKEY
     String MYKEY_OFFICIAL_PRODUCT_URL = "https://mykey.org/product";
 
-    // MYKEY Sdk Version
-    String MYKEY_WALLET_VERSION = "1.0";
     String MYKEY_WALLET_PROTOCOL = "MYKEY";
     String MYKEY_SIMPLE_WALLET_PROTOCOL = "MYKEYSimple";
     // the format deep link url for callback, need fill in data

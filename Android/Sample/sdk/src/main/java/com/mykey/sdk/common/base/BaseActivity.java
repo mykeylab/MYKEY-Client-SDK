@@ -24,7 +24,7 @@ public class BaseActivity extends Activity {
             if (StatusBarUtil.isMIUI6Later() || StatusBarUtil.isFlyme4Later() || Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 StatusBarUtil.setStatusBarDarkMode(this);
             } else {
-                StatusBarUtil.tintStatusBar(this, getResources().getColor(R.color.page_top_bg), 1f);
+                StatusBarUtil.tintStatusBar(this, getResources().getColor(R.color.mykey_page_top_bg), 1f);
             }
             StatusBarUtil.setHeightAndPadding(this, getWindow().getDecorView());
         }

@@ -2,14 +2,14 @@
 <resources>
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/theme_active</item>
-        <item name="colorPrimaryDark">@color/theme_active</item>
+        <item name="colorPrimary">@color/mykey_theme_active</item>
+        <item name="colorPrimaryDark">@color/mykey_theme_active</item>
         <!--<item name="colorAccent">@color/colorAccent</item>-->
         <!--<item name="android:windowBackground">@drawable/bg_welcome</item>-->
         <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
     <style name="MyKeyActivity" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!--背景：透明-->
-        <item name="android:windowBackground">@color/page_top_bg</item>
+        <item name="android:windowBackground">@color/mykey_page_top_bg</item>
     </style>
 </resources>

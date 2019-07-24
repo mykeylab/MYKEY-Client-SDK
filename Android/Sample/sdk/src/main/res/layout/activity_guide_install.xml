@@ -4,13 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/page_top_bg">
+    android:background="@color/mykey_page_top_bg">
     <!--背景色-->
     <TextView
         android:id="@+id/top_bg"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:background="@color/page_top_bg"/>
+        android:background="@color/mykey_page_top_bg"/>
     <!--返回按钮-->
     <ImageView
         android:id="@+id/back"
@@ -25,14 +25,14 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:gravity="center"
-        android:textColor="@color/title_black_light"
+        android:textColor="@color/mykey_title_black_light"
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="MYKEY" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/mykey_white"
         android:layout_below="@+id/sdk_guide_install_title">
         <ImageView
             android:id="@+id/sdk_guide_install_logo"
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@color/title_black_light"
+            android:textColor="@color/mykey_title_black_light"
             android:gravity="center"
             android:layout_marginTop="32dp"
             android:text="@string/sdk_download.txt.title"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:textSize="16sp"
-            android:textColor="@color/theme_active"
+            android:textColor="@color/mykey_theme_active"
             android:gravity="center"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"

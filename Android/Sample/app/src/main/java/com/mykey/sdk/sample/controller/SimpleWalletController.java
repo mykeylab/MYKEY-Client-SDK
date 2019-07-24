@@ -96,7 +96,7 @@ public class SimpleWalletController {
         transferRequest.setSymbol("EOS");
         transferRequest.setPrecision(4);
         transferRequest.setDappData("memo");
-        transferRequest.setDesc("transfer ro alicealice11");
+        transferRequest.setDesc("transfer to alicealice11");
         transferRequest.setCallback("simple://con.mykey.simplewallet?action=transfer");
         transferRequest.setTransferUrl(Config.DAPP_CALLBACK_URL);
 

@@ -8,9 +8,13 @@ import com.mykey.sdk.R;
 import com.mykey.sdk.common.constants.ConfigCons;
 import com.mykey.sdk.common.constants.ErrorCons;
 import com.mykey.sdk.common.constants.WalletActionCons;
+import com.mykey.sdk.common.manager.HandlerManager;
 import com.mykey.sdk.common.store.memory.MemoryManager;
+import com.mykey.sdk.common.util.ToastUtil;
 import com.mykey.sdk.entity.agreement.request.BaseProtocolRequest;
+import com.mykey.sdk.entity.client.response.PayloadResponse;
 import com.mykey.sdk.entity.client.response.RootResponse;
+import com.mykey.sdk.functionpage.guideinstall.GuideInstallActivity;
 import com.mykey.sdk.jni.MYKEYWalletJni;
 import com.mykey.sdk.callback.MYKEYCallbackResponseFactory;
 import com.mykey.sdk.callback.MYKEYCallbackManager;
@@ -49,8 +53,15 @@ public class BaseHandle {
             context.startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
-            RootResponse rootResponse = MYKEYCallbackResponseFactory.getErrorResponse(ErrorCons.ERROR_CODE_CAN_NOT_WAKE_UP,
+            RootResponse rootResponse = MYKEYCallbackResponseFactory.getErrorResponse(ErrorCons.ERROR_CODE_MYKEY_NOT_INSTALL,
                     context.getResources().getString(R.string.error_txt_wake_up), MYKEYWalletCallback);
+            if (!MemoryManager.isDisableInstall()) {
+                // 如果配置允许则跳转到引导安装页面
+                jumpToGuideInstall(context);
+            }
+            if (MemoryManager.isShowUpgradeTip()) {
+                ToastUtil.toast(context, context.getResources().getString(R.string.error_txt_wake_up));
+            }
             MYKEYCallbackManager.getInstance().dispatch(rootResponse);
         }
     }
@@ -74,5 +85,15 @@ public class BaseHandle {
      */
     protected String getDAppCallBackUrl(String callBackPage, String action, String callBackId) {
         return String.format(ConfigCons.MYKEY_WALLET_CALLBACK_URL_FORMAT, callBackPage, action, callBackId);
+    }
+
+    private void jumpToGuideInstall(Context context) {
+        Intent intent = new Intent(context, GuideInstallActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            context.startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

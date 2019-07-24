@@ -123,10 +123,10 @@ public class StakeTokenExampleController {
                 .setFrom("bobbobbobbob")
                 .setTo("alicealice11")
                 .setAmount(1)
-                .setMemo("Transfer:FromStakedToLiquid")
+                .setMemo("Transfer:FromLiquidToStaked")
                 .setContractName("hellomykey11")
                 .setSymbol("ADD")
-                .setInfo("FromStakedToLiquid")
+                .setInfo("FromLiquidToStaked")
                 .setDecimal(4);
         MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
             @Override

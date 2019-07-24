@@ -69,3 +69,13 @@
 
 -keep class **Entity{*;}
 -dontwarn **Entity
+
+
+-keep class com.mykey.sdk**{*;}
+-dontwarn com.mykey.sdk**
+
+-keep class go**{*;}
+-dontwarn go**
+
+-keep class mykeycore**{*;}
+-dontwarn mykeycore**
