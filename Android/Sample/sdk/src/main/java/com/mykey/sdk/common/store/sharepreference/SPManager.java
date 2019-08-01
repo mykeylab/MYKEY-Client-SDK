@@ -2,13 +2,14 @@ package com.mykey.sdk.common.store.sharepreference;
 
 import android.content.SharedPreferences;
 
+import com.mykey.sdk.MYKEYSdk;
+import com.mykey.sdk.common.constants.StoreKeyCons;
+
 /**
  * Created by zero on 2019/5/27.
  */
 
 public class SPManager {
-
-
 
     private static void put(String key, String value, SharedPreferences.Editor editor) {
         editor.putString(key, value);
@@ -44,5 +45,27 @@ public class SPManager {
 
     private static long get(SharedPreferences preferences, String key, long defaultValue) {
         return preferences.getLong(key, defaultValue);
+    }
+
+    public static void setServicePrivate(String privateKey) {
+        SharedPreferences userSharedPreference = SPFactory.getUserSP(MYKEYSdk.getInstance().getContext());
+        SharedPreferences.Editor editor = userSharedPreference.edit();
+        put(StoreKeyCons.SP_KEY_SERVICE_PRIVATE_KEY, privateKey, editor);
+    }
+
+    public static String getServicePrivate() {
+        SharedPreferences userSharedPreference = SPFactory.getUserSP(MYKEYSdk.getInstance().getContext());
+        return get(userSharedPreference, StoreKeyCons.SP_KEY_SERVICE_PRIVATE_KEY, "");
+    }
+
+    public static void setServicePublic(String publicKey) {
+        SharedPreferences userSharedPreference = SPFactory.getUserSP(MYKEYSdk.getInstance().getContext());
+        SharedPreferences.Editor editor = userSharedPreference.edit();
+        put(StoreKeyCons.SP_KEY_SERVICE_PUBLIC_KEY, publicKey, editor);
+    }
+
+    public static String getServicePublic() {
+        SharedPreferences userSharedPreference = SPFactory.getUserSP(MYKEYSdk.getInstance().getContext());
+        return get(userSharedPreference, StoreKeyCons.SP_KEY_SERVICE_PUBLIC_KEY, "");
     }
 }

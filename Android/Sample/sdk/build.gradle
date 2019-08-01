@@ -46,7 +46,6 @@ android {
 }
 
 repositories {
-    //指定aar目录
     flatDir {
         dirs 'libs'
     }
@@ -57,12 +56,13 @@ dependencies {
 
     implementation getProject().appcompatV7
     implementation "com.alibaba:fastjson:$libVersions.FastJson"
-    implementation(name: "MyKeyCoreJni", ext: 'aar')
+//    implementation(name: "MyKeyCoreJni", ext: 'aar')
+
 
 
 //    embed "com.alibaba:fastjson:$libVersions.FastJson"
 //    compileOnly "com.alibaba:fastjson:$libVersions.FastJson"
-//    embed(name: "MyKeyCoreJni", ext: 'aar')
-//    compileOnly (name:'MyKeyCoreJni',ext:'aar')
+    embed(name: "MyKeyCoreJni", ext: 'aar')
+    compileOnly (name:'MyKeyCoreJni',ext:'aar')
 
 }

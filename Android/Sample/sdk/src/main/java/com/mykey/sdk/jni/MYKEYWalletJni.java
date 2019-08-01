@@ -1,5 +1,7 @@
 package com.mykey.sdk.jni;
 
+import android.content.Context;
+
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.mykey.sdk.common.constants.ErrorCons;
@@ -7,7 +9,9 @@ import com.mykey.sdk.common.util.LogUtil;
 import com.mykey.sdk.jni.entity.response.BaseJniResponse;
 import com.mykey.sdk.jni.entity.response.EmptyResponse;
 import com.mykey.sdk.jni.entity.response.EncodeParamResponse;
+import com.mykey.sdk.jni.entity.response.KeyResponse;
 import com.mykey.sdk.jni.entity.response.RequestPubKeyResponse;
+import com.mykey.sdk.jni.entity.response.SignResponse;
 
 import mykeycore.ApiRequestCallback;
 import mykeycore.InitEntity;
@@ -60,6 +64,21 @@ public class MYKEYWalletJni {
     public static void getUnlockList(String chain, String code, String symbol, ApiRequestCallback apiRequest) {
         getResultData(Mykeycore.getUnlockList(chain, code, symbol, apiRequest), new TypeReference<BaseJniResponse<EmptyResponse>>() {
         });
+    }
+
+    public static KeyResponse createPrivateKey(Context context) {
+        KeyResponse keyResponse = getResultData(Mykeycore.createPrivate(context.getCacheDir().getAbsolutePath()), new TypeReference<BaseJniResponse<KeyResponse>>() {
+        });
+        return keyResponse;
+    }
+
+    public static String sign(String encrptyPrivate, String unsignedData) {
+        SignResponse signResponse = getResultData(Mykeycore.sign(encrptyPrivate, unsignedData), new TypeReference<BaseJniResponse<SignResponse>>() {
+        });
+        if (null == signResponse) {
+            return "";
+        }
+        return signResponse.getSignedData();
     }
 
 //    private static <T> T getResultData(String responseJson, TypeToken typeToken) {

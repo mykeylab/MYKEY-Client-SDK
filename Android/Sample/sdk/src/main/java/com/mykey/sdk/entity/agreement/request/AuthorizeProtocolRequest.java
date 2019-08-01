@@ -14,6 +14,16 @@ public class AuthorizeProtocolRequest extends BaseProtocolRequest {
     private String dappUserName;
     // public key just for MYKEY bind
     private String requestPubKey;
+    // public key just for MYKEY service
+    private String servicePubKey;
+
+    public String getServicePubKey() {
+        return servicePubKey;
+    }
+
+    public void setServicePubKey(String servicePubKey) {
+        this.servicePubKey = servicePubKey;
+    }
 
     public String getRequestPubKey() {
         return requestPubKey;

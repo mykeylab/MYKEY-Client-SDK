@@ -12,6 +12,12 @@ public interface ConfigCons {
     String DEVICE = "android";
     // Package name of MYKEY
     String MYKEY_PACKAGE_NAME = "com.mykey.id";
+    // Api base url, just for MYKEY EosIo
+    String MYKEY_BASE_URL = "https://app.mykey.tech";
+    // the product url of MYKEY
+    String MYKEY_OFFICIAL_PRODUCT_URL = "https://mykey.org/product";
+
+    // ####################################DeepLink
     // deeplink of MYKEY home
     String MYKEY_DEEP_LINK_HOME = "mykey://mykey.org/";
     // deep link of dapp in MYKEY for sample
@@ -23,10 +29,7 @@ public interface ConfigCons {
     // the format deep link url for Simple Wallet, need fill in data
     String SIMPLE_WALLET_URL_FORMAT = "simplewallet://eos.io?param=%s";
 
-    String MYKEY_BASE_URL = "https://app.mykey.tech";
-    // the product url of MYKEY
-    String MYKEY_OFFICIAL_PRODUCT_URL = "https://mykey.org/product";
-
+    // ####################################MYKEYWallet
     String MYKEY_WALLET_PROTOCOL = "MYKEY";
     String MYKEY_SIMPLE_WALLET_PROTOCOL = "MYKEYSimple";
     // the format deep link url for callback, need fill in data
@@ -34,4 +37,12 @@ public interface ConfigCons {
 
     String MYKEY_SIMPLE_WALLET_APP_KEY_PREFIX = "MYKEY-simple-wallet-app-key-prefix-&#%";
 
+    // ####################################ConnectService
+    String CONNECT_CLASS_PATH = "com.mykey.id.push.messenger.MessengerService";
+    String CONNECT_PARAM_KEY_PARAM = "param";
+    String CONNECT_PARAM_KEY_APPKEY= "appKey";
+    String CONNECT_PARAM_KEY_USERID = "userId";
+
+    int CONNECT_MESSAGE_TO_SERVICE = 10001;
+    int CONNECT_MESSAGE_TO_CLIENT = 20001;
 }

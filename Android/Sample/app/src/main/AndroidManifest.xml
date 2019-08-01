@@ -19,7 +19,7 @@
         </activity>
         <!--CallbackPage of MYKEY Sdk-->
         <activity
-            android:name="com.mykey.sdk.callback.MYKEYCallbackActivity"
+            android:name="com.mykey.sdk.connect.scheme.callback.MYKEYCallbackActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

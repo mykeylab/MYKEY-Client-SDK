@@ -14,6 +14,17 @@ public class InitSimpleRequest {
     private boolean showUpgradeTip = false;
     // Deeplink MYKEY callback to dapp,defined in AndroidManifest.xml, e.g. customscheme://customhost/custompath
     private String callback;
+    // Do not display prompt for contract action except transfer
+    private boolean contractPromptFree = false;
+
+    public boolean isContractPromptFree() {
+        return contractPromptFree;
+    }
+
+    public InitSimpleRequest setContractPromptFree(boolean contractPromptFree) {
+        this.contractPromptFree = contractPromptFree;
+        return this;
+    }
 
     public String getProtocol() {
         return protocol;

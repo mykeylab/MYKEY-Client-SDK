@@ -16,4 +16,8 @@ public interface StoreKeyCons {
     String MEMORY_KEY_DISABLE_INSTALL = "memoryKeyDisableInstall";
     String MEMORY_KEY_SHOW_UPGRADE_TIP = "memoryKeyShowUpgradeTip";
     String MEMORY_KEY_PROTOCOL = "memoryKeyProtocol";
+    String MEMORY_KEY_PROMPTFREE_CONTRACT = "memoryKeyPromptFreeContract";
+
+    String SP_KEY_SERVICE_PRIVATE_KEY = "spServicePrivateKey";
+    String SP_KEY_SERVICE_PUBLIC_KEY = "spServicePublicKey";
 }

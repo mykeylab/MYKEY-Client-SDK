@@ -24,6 +24,8 @@ public class InitRequest {
     // Deeplink MYKEY callback to dapp,defined in AndroidManifest.xml, e.g. customscheme://customhost/custompath
     private String callback;
     private String mykeyServer;
+    // Do not display prompt for contract action except transfer
+    private boolean contractPromptFree = false;
 
     public InitRequest() {
     }
@@ -36,6 +38,16 @@ public class InitRequest {
         this.disableInstall = initSimpleRequest.isDisableInstall();
         this.callback = initSimpleRequest.getCallback();
         this.showUpgradeTip = initSimpleRequest.isShowUpgradeTip();
+        this.contractPromptFree = initSimpleRequest.isContractPromptFree();
+    }
+
+    public boolean isContractPromptFree() {
+        return contractPromptFree;
+    }
+
+    public InitRequest setContractPromptFree(boolean contractPromptFree) {
+        this.contractPromptFree = contractPromptFree;
+        return this;
     }
 
     public String getMYKEYServer() {

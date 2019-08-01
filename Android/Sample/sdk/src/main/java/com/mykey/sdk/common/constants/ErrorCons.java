@@ -22,4 +22,9 @@ public interface ErrorCons {
     int JUST_MYKEY_BINDED = 10009;
     int BIND_NOT_MATCH = 10010;
     int MYKEY_UNREGISTERED = 10011;
+
+    // ##############################接入方不需要知道的错误
+    int SERVICE_FREE_PROMPT_INVALID = 20001;
+    int SERVICE_PASSWORD_EXPIRED = 20002;
+    int SERVICE_FAILURE = 20003;
 }

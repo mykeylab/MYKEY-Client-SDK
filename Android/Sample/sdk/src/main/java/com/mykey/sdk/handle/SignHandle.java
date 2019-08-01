@@ -4,19 +4,19 @@ import android.content.Context;
 
 import com.mykey.sdk.common.constants.WalletActionCons;
 import com.mykey.sdk.common.util.JsonUtil;
+import com.mykey.sdk.connect.scheme.SchemeConnectManager;
+import com.mykey.sdk.connect.scheme.callback.MYKEYCallbackManager;
+import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.entity.agreement.request.SignProtocolRequest;
 import com.mykey.sdk.entity.client.request.SignRequest;
-import com.mykey.sdk.callback.MYKEYCallbackManager;
-import com.mykey.sdk.callback.MYKEYWalletCallback;
 
 /**
  * Created by zero on 2019/5/27.
  */
 
 public class SignHandle extends BaseHandle {
-    public void handle(Context context, SignRequest signRequest, MYKEYWalletCallback MYKEYWalletCallback) {
-        this.MYKEYWalletCallback = MYKEYWalletCallback;
-        wakeUpMyKey(context, getSignAgreementJson(signRequest, MYKEYCallbackManager.getInstance().getCallBackId(MYKEYWalletCallback)));
+    public void handle(Context context, SignRequest signRequest, MYKEYWalletCallback mykeyWalletCallback) {
+        SchemeConnectManager.getInstance().sendToMYKEY(context, getSignAgreementJson(signRequest, MYKEYCallbackManager.getInstance().getCallBackId(mykeyWalletCallback)), mykeyWalletCallback);
     }
 
     private String getSignAgreementJson(SignRequest signRequest, String callBackId) {

@@ -3,8 +3,8 @@ package com.mykey.sdk;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.mykey.sdk.callback.MYKEYCallbackManager;
-import com.mykey.sdk.callback.MYKEYWalletCallback;
+import com.mykey.sdk.connect.scheme.callback.MYKEYCallbackManager;
+import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.common.constants.ErrorCons;
 import com.mykey.sdk.common.store.memory.MemoryManager;
 import com.mykey.sdk.common.util.JsonUtil;
@@ -27,7 +27,7 @@ import com.mykey.sdk.handle.TransferHandle;
  */
 
 public class MYKEYSdk {
-    private final static MYKEYSdk mykeySdk = new MYKEYSdk();
+    private static final MYKEYSdk mykeySdk = new MYKEYSdk();
     private Context context;
     private InitHandle initHandle;
     private AuthorizeHandle authorizeHandle;
@@ -58,7 +58,7 @@ public class MYKEYSdk {
      */
     public void init(InitRequest initRequest) {
         this.context = initRequest.getContext().getApplicationContext();
-        initHandle.handle(initRequest);
+        initHandle.handle(context, initRequest);
     }
 
     /**
@@ -68,7 +68,7 @@ public class MYKEYSdk {
      */
     public void initSimple(InitSimpleRequest initRequest) {
         this.context = initRequest.getContext().getApplicationContext();
-        initHandle.handle(initRequest);
+        initHandle.handle(context, initRequest);
     }
 
     /**

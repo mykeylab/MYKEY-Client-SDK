@@ -1,5 +1,6 @@
 package com.mykey.sdk.handle;
 
+import android.content.Context;
 import android.text.TextUtils;
 
 import com.mykey.sdk.common.constants.ConfigCons;
@@ -7,6 +8,7 @@ import com.mykey.sdk.common.constants.StoreKeyCons;
 import com.mykey.sdk.common.store.memory.MemoryManager;
 import com.mykey.sdk.common.util.MD5Util;
 import com.mykey.sdk.common.util.SystemUtil;
+import com.mykey.sdk.connect.service.ServiceConnectManager;
 import com.mykey.sdk.entity.client.request.InitRequest;
 import com.mykey.sdk.entity.client.request.InitSimpleRequest;
 import com.mykey.sdk.jni.MYKEYWalletJni;
@@ -22,7 +24,7 @@ import mykeycore.InitEntity;
  */
 
 public class InitHandle {
-    public void handle(InitRequest initRequest) {
+    public void handle(Context context, InitRequest initRequest) {
         // Store related information
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_APP_KEY, initRequest.getAppKey());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_USER_ID, initRequest.getUuid().toString());
@@ -32,6 +34,7 @@ public class InitHandle {
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_SHOW_UPGRADE_TIP, initRequest.isShowUpgradeTip());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_DISABLE_INSTALL, initRequest.isDisableInstall());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_PROTOCOL, initRequest.getProtocol());
+        MemoryManager.set(StoreKeyCons.MEMORY_KEY_PROMPTFREE_CONTRACT, initRequest.isContractPromptFree());
 
         // Prepare the underlying library to initialize the data
         InitEntity initEntity = new InitEntity();
@@ -48,9 +51,10 @@ public class InitHandle {
         initEntity.setUserAgent(userAgentRequest.toString());
 
         MYKEYWalletJni.init(initEntity);
+        ServiceConnectManager.getInstance().init(context);
     }
 
-    public void handle(InitSimpleRequest initSimpleRequest) {
+    public void handle(Context context, InitSimpleRequest initSimpleRequest) {
         // Generate simple's appkey and userid
         String simpleAppKey = MD5Util.getMD5String(ConfigCons.MYKEY_SIMPLE_WALLET_APP_KEY_PREFIX + initSimpleRequest.getDappName());
         String simpleUserId = SystemUtil.getUUID();
@@ -58,6 +62,6 @@ public class InitHandle {
         initRequest.setAppKey(simpleAppKey);
         initRequest.setUuid(new UUID(simpleUserId.hashCode(), simpleUserId.hashCode()));
 
-        handle(initRequest);
+        handle(context, initRequest);
     }
 }

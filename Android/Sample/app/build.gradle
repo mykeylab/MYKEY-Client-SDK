@@ -33,16 +33,16 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false //使用代码混淆
-            zipAlignEnabled true //使用应用优化
-            shrinkResources false //移除未使用的资源
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
 
         debug {
-            minifyEnabled false //使用代码混淆
+            minifyEnabled false
             debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
@@ -69,7 +69,6 @@ android {
 }
 
 repositories {
-    //指定aar目录
     flatDir {
         dirs 'libs'
         dirs '../sdk/libs'

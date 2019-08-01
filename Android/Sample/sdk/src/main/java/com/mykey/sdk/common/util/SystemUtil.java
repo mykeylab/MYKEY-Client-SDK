@@ -153,7 +153,7 @@ public class SystemUtil {
         //获取packagemanager
         final PackageManager packageManager = context.getPackageManager();
         //获取所有已安装程序的包信息
-        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);
+        List<PackageInfo> pinfo = packageManager.getInstalledPackages(PackageManager.GET_ACTIVITIES | PackageManager.GET_SERVICES);
         //用于存储所有已安装程序的包名
         List<String> pName = new ArrayList<>();
         //从pinfo中将包名字逐一取出，压入pName list中

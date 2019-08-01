@@ -15,6 +15,25 @@ public class ContractProtocolRequest extends BaseProtocolRequest {
     private String contractUrl;
 
     private String orderId;
+    private String signedData;
+    // public key just for MYKEY service
+    private String servicePubKey;
+
+    public String getServicePubKey() {
+        return servicePubKey;
+    }
+
+    public void setServicePubKey(String servicePubKey) {
+        this.servicePubKey = servicePubKey;
+    }
+
+    public String getSignedData() {
+        return signedData;
+    }
+
+    public void setSignedData(String signedData) {
+        this.signedData = signedData;
+    }
 
     public String getContractUrl() {
         return contractUrl;

@@ -23,7 +23,7 @@ public class SampleActivity extends AppCompatActivity {
 
     private MYKEYSdkInitController mykeySdkInitController;
     private SimpleWalletController simpleWalletController;
-    private MYKEYWalletController MYKEYWalletController;
+    private MYKEYWalletController mykeyWalletController;
     private StakeTokenApiController stakeTokenApiController;
     private StakeTokenExampleController stakeTokenExampleController;
 
@@ -67,7 +67,7 @@ public class SampleActivity extends AppCompatActivity {
     private void initData() {
         mykeySdkInitController = new MYKEYSdkInitController(this);
         simpleWalletController = new SimpleWalletController(this);
-        MYKEYWalletController = new MYKEYWalletController(this);
+        mykeyWalletController = new MYKEYWalletController(this);
         stakeTokenApiController = new StakeTokenApiController(this);
         stakeTokenExampleController = new StakeTokenExampleController(this);
     }
@@ -129,13 +129,13 @@ public class SampleActivity extends AppCompatActivity {
             }
             // Following are MYKEYSdk method calls
             else if (view == btnMYKEYAuthorize) {
-                MYKEYWalletController.onAuthorize();
+                mykeyWalletController.onAuthorize();
             } else if (view == btnMYKEYContract) {
-                MYKEYWalletController.onMyKeyContract();
+                mykeyWalletController.onMyKeyContract();
             } else if (view == btnMYKEYTransfer) {
-                MYKEYWalletController.onMyKeyTransfer();
+                mykeyWalletController.onMyKeyTransfer();
             } else if (view == btnMYKEYSign) {
-                MYKEYWalletController.onMyKeySign();
+                mykeyWalletController.onMyKeySign();
             }
             // Following are 'stake token contract' api calls
             else if (view == btnGetBalance) {

@@ -1,27 +1,33 @@
 package com.mykey.sdk.handle;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.mykey.sdk.common.constants.WalletActionCons;
 import com.mykey.sdk.common.store.memory.MemoryManager;
+import com.mykey.sdk.common.store.sharepreference.SPManager;
 import com.mykey.sdk.common.util.JsonUtil;
+import com.mykey.sdk.connect.scheme.SchemeConnectManager;
+import com.mykey.sdk.connect.scheme.callback.MYKEYCallbackManager;
+import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.entity.agreement.request.AuthorizeProtocolRequest;
 import com.mykey.sdk.entity.client.request.AuthorizeRequest;
 import com.mykey.sdk.jni.MYKEYWalletJni;
-import com.mykey.sdk.callback.MYKEYCallbackManager;
-import com.mykey.sdk.callback.MYKEYWalletCallback;
+import com.mykey.sdk.jni.entity.response.KeyResponse;
 
 /**
  * Created by zero on 2019/5/27.
  */
 
 public class AuthorizeHandle extends BaseHandle {
-    public void handle(Context context, AuthorizeRequest authorizeRequest, MYKEYWalletCallback MYKEYWalletCallback) {
-        this.MYKEYWalletCallback = MYKEYWalletCallback;
-        wakeUpMyKey(context, getAuthorizeAgreementJson(authorizeRequest, MYKEYCallbackManager.getInstance().getCallBackId(MYKEYWalletCallback)));
+    public void handle(Context context, AuthorizeRequest authorizeRequest, MYKEYWalletCallback mykeyWalletCallback) {
+        // 获取一组私钥
+        String servicePublicKey = retrievePrivateKey(context);
+        String protocolJson = getAuthorizeAgreementJson(authorizeRequest, MYKEYCallbackManager.getInstance().getCallBackId(mykeyWalletCallback), servicePublicKey);
+        SchemeConnectManager.getInstance().sendToMYKEY(context, protocolJson, mykeyWalletCallback);
     }
 
-    private String getAuthorizeAgreementJson(AuthorizeRequest authorizeRequest, String callBackId) {
+    private String getAuthorizeAgreementJson(AuthorizeRequest authorizeRequest, String callBackId, String publicKey) {
         AuthorizeProtocolRequest authorizeAgreementRequest = new AuthorizeProtocolRequest();
         authorizeAgreementRequest.setAction(WalletActionCons.LOGIN);
         authorizeAgreementRequest.setUuID(MemoryManager.getUserId());
@@ -30,6 +36,7 @@ public class AuthorizeHandle extends BaseHandle {
 
         authorizeAgreementRequest.setDappUserName(authorizeRequest.getUserName());
         authorizeAgreementRequest.setRequestPubKey(MYKEYWalletJni.getRequestPubKey());
+        authorizeAgreementRequest.setServicePubKey(publicKey);
 
         fillCommonData(authorizeAgreementRequest, callBackId);
         return JsonUtil.toJson(authorizeAgreementRequest);

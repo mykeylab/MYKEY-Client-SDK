@@ -12,9 +12,8 @@ import com.mykey.sdk.entity.client.request.TransferRequest;
 import com.mykey.sdk.entity.client.request.action.ContractAction;
 import com.mykey.sdk.entity.client.request.action.TransferAction;
 import com.mykey.sdk.entity.client.request.action.data.TransferData;
-import com.mykey.sdk.callback.MYKEYWalletCallback;
+import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.sample.Config;
-import com.mykey.sdk.sample.entity.BuyRamDataEntity;
 import com.mykey.sdk.sample.entity.StakeEntity;
 
 /**

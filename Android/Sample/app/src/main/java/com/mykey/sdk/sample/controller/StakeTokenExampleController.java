@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.widget.Toast;
 
 import com.mykey.sdk.MYKEYSdk;
-import com.mykey.sdk.callback.MYKEYWalletCallback;
+import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.common.util.LogUtil;
 import com.mykey.sdk.entity.client.request.ContractRequest;
 import com.mykey.sdk.entity.client.request.TransferRequest;
@@ -29,10 +29,11 @@ public class StakeTokenExampleController {
         ContractRequest contractRequest = new ContractRequest()
                 .setInfo("action memo");
         ContractAction contractActionRequest = new ContractAction();
-        contractActionRequest.setAccount("hellomykey11")
+        contractActionRequest.setAccount("mkstaketoken")
                 .setName("stake")
-                .setInfo("Execute contract lock 1.0000 ADD")
-                .setData(new StakeEntity().setOwner("bobbobbobbob").setQuantity("1.0000 ADD"));
+                .setInfo("Execute contract lock 1.0000 SYS")
+                // uiuiui111111
+                .setData(new StakeEntity().setOwner("mykeyhulu525").setQuantity("1.0000 SYS"));
         contractRequest.addAction(contractActionRequest);
 
         MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {

@@ -19,6 +19,16 @@ public abstract class BaseProtocolRequest {
     // appABC://abc.com?action=login&result=1
     // result：0:cancelled,1:success,2:failure
     private String callback;
+    // just for sdk, used to find callback object
+    private String callbackId;
+
+    public String getCallbackId() {
+        return callbackId;
+    }
+
+    public void setCallbackId(String callbackId) {
+        this.callbackId = callbackId;
+    }
 
     public String getCallback() {
         return callback;

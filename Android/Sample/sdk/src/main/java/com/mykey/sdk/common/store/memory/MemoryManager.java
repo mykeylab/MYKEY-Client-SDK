@@ -80,4 +80,12 @@ public class MemoryManager {
         }
         return false;
     }
+
+    public static boolean isContractPromptFree() {
+        Object obj = memoryMap.get(StoreKeyCons.MEMORY_KEY_PROMPTFREE_CONTRACT);
+        if (null != obj) {
+            return StringUtil.toBoolean(obj.toString());
+        }
+        return false;
+    }
 }
