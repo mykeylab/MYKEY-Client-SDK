@@ -1,31 +1,37 @@
 package com.mykey.sdk.sample;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.mykey.sdk.common.constants.ConfigCons;
 import com.mykey.sdk.common.util.MKUtil;
+import com.mykey.sdk.sample.controller.AuthorizeAnyChainController;
 import com.mykey.sdk.sample.controller.MYKEYSdkInitController;
-import com.mykey.sdk.sample.controller.MYKEYWalletController;
 import com.mykey.sdk.sample.controller.SimpleWalletController;
 import com.mykey.sdk.sample.controller.StakeTokenApiController;
 import com.mykey.sdk.sample.controller.StakeTokenExampleController;
+import com.mykey.sdk.sample.controller.mykeywallet.MYKEYWalletEosController;
+import com.mykey.sdk.sample.controller.mykeywallet.MYKEYWalletEthController;
 
-public class SampleActivity extends AppCompatActivity {
+public class SampleActivity extends Activity {
 
     private Button btnGoToMYKEY, btnGoToDApp;
     private Button btnMYKEYSdk, btnMYKEYSdkSimple;
+    private Button btnMyKeyAuthorizeAny, btnSimpleWalletAuthorizeAny;
     private Button btnMYKEYAuthorize, btnSimpleWalletAuthorize, btnMYKEYContract, btnSimpleWalletContract, btnMYKEYTransfer, btnSimpleWalletTransfer, btnMYKEYSign, btnSimpleWalletSign;
     private Button btnGetBalance, btnGetUnlockList, btnGetBindInfo;
     private Button btnStake, btnUnStake, btnTransfer, btnTransferAndStake, btnUnStakeAndTransfer;
+    private Button btnMYKEYEthAuthorize, btnMYKEYEthContract, btnMYKEYEthTransferEth, btnMYKEYEthTransferErc20, btnMYKEYEthSign;
 
     private MYKEYSdkInitController mykeySdkInitController;
     private SimpleWalletController simpleWalletController;
-    private MYKEYWalletController mykeyWalletController;
+    private MYKEYWalletEosController mykeyWalletEosController;
+    private MYKEYWalletEthController mykeyWalletEthController;
     private StakeTokenApiController stakeTokenApiController;
     private StakeTokenExampleController stakeTokenExampleController;
+    private AuthorizeAnyChainController authorizeAnyChainController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +49,24 @@ public class SampleActivity extends AppCompatActivity {
         btnMYKEYSdk = findViewById(R.id.mykey_sdk_init);
         btnMYKEYSdkSimple = findViewById(R.id.mykey_sdk_init_simple);
 
-        btnSimpleWalletAuthorize = findViewById(R.id.simple_authorize_simple_wallet);
-        btnSimpleWalletContract = findViewById(R.id.simple_contract_simple_wallet);
-        btnSimpleWalletTransfer = findViewById(R.id.simple_transfer_simple_wallet);
-        btnSimpleWalletSign = findViewById(R.id.simple_sign_simple_wallet);
+        btnMyKeyAuthorizeAny = findViewById(R.id.sample_authorize_mykey_any);
+        btnSimpleWalletAuthorizeAny = findViewById(R.id.sample_authorize_simple_any);
 
-        btnMYKEYAuthorize = findViewById(R.id.simple_authorize_mykey);
-        btnMYKEYContract = findViewById(R.id.simple_contract_mykey);
-        btnMYKEYTransfer = findViewById(R.id.simple_transfer_mykey);
-        btnMYKEYSign = findViewById(R.id.simple_sign_mykey);
+        btnSimpleWalletAuthorize = findViewById(R.id.sample_authorize_simple_wallet);
+        btnSimpleWalletContract = findViewById(R.id.sample_contract_simple_wallet);
+        btnSimpleWalletTransfer = findViewById(R.id.sample_transfer_simple_wallet);
+        btnSimpleWalletSign = findViewById(R.id.sample_sign_simple_wallet);
+
+        btnMYKEYAuthorize = findViewById(R.id.sample_authorize_mykey);
+        btnMYKEYContract = findViewById(R.id.sample_contract_mykey);
+        btnMYKEYTransfer = findViewById(R.id.sample_transfer_mykey);
+        btnMYKEYSign = findViewById(R.id.sample_sign_mykey);
+
+        btnMYKEYEthAuthorize = findViewById(R.id.sample_authorize_mykey_eth);
+        btnMYKEYEthContract = findViewById(R.id.sample_contract_mykey_eth);
+        btnMYKEYEthTransferEth = findViewById(R.id.sample_transfer_mykey_eth);
+        btnMYKEYEthTransferErc20 = findViewById(R.id.sample_transfer_mykey_erc20);
+        btnMYKEYEthSign = findViewById(R.id.sample_sign_mykey_eth);
 
         btnGetBalance = findViewById(R.id.api_get_balance);
         btnGetUnlockList = findViewById(R.id.api_get_unlock_list);
@@ -67,9 +82,11 @@ public class SampleActivity extends AppCompatActivity {
     private void initData() {
         mykeySdkInitController = new MYKEYSdkInitController(this);
         simpleWalletController = new SimpleWalletController(this);
-        mykeyWalletController = new MYKEYWalletController(this);
+        mykeyWalletEosController = new MYKEYWalletEosController(this);
+        mykeyWalletEthController = new MYKEYWalletEthController(this);
         stakeTokenApiController = new StakeTokenApiController(this);
         stakeTokenExampleController = new StakeTokenExampleController(this);
+        authorizeAnyChainController = new AuthorizeAnyChainController(this);
     }
 
     private void initListener() {
@@ -79,10 +96,19 @@ public class SampleActivity extends AppCompatActivity {
         btnMYKEYSdk.setOnClickListener(onClickListener);
         btnMYKEYSdkSimple.setOnClickListener(onClickListener);
 
+        btnMyKeyAuthorizeAny.setOnClickListener(onClickListener);
+        btnSimpleWalletAuthorizeAny.setOnClickListener(onClickListener);
+
         btnSimpleWalletAuthorize.setOnClickListener(onClickListener);
         btnSimpleWalletContract.setOnClickListener(onClickListener);
         btnSimpleWalletTransfer.setOnClickListener(onClickListener);
         btnSimpleWalletSign.setOnClickListener(onClickListener);
+
+        btnMYKEYEthAuthorize.setOnClickListener(onClickListener);
+        btnMYKEYEthContract.setOnClickListener(onClickListener);
+        btnMYKEYEthTransferEth.setOnClickListener(onClickListener);
+        btnMYKEYEthTransferErc20.setOnClickListener(onClickListener);
+        btnMYKEYEthSign.setOnClickListener(onClickListener);
 
         btnMYKEYAuthorize.setOnClickListener(onClickListener);
         btnMYKEYContract.setOnClickListener(onClickListener);
@@ -117,6 +143,12 @@ public class SampleActivity extends AppCompatActivity {
             } else if (view == btnMYKEYSdkSimple) {
                 mykeySdkInitController.initSdkSimple();
             }
+            // Authorize with set ANY chain
+            else if (view == btnMyKeyAuthorizeAny) {
+                authorizeAnyChainController.onMyKeyAuthorizeAnyChain();
+            } else if (view == btnSimpleWalletAuthorizeAny) {
+                authorizeAnyChainController.onSimpleWalletAuthorizeAnyChain();
+            }
             // Following are SimpleWallet method calls
             else if (view == btnSimpleWalletAuthorize) {
                 simpleWalletController.onkAuthorize();
@@ -127,15 +159,27 @@ public class SampleActivity extends AppCompatActivity {
             } else if (view == btnSimpleWalletSign) {
                 simpleWalletController.onSimpleWalletSign();
             }
-            // Following are MYKEYSdk method calls
+            // Following are MYKEYSdk EOS method calls
             else if (view == btnMYKEYAuthorize) {
-                mykeyWalletController.onAuthorize();
+                mykeyWalletEosController.onAuthorize();
             } else if (view == btnMYKEYContract) {
-                mykeyWalletController.onMyKeyContract();
+                mykeyWalletEosController.onMyKeyContract();
             } else if (view == btnMYKEYTransfer) {
-                mykeyWalletController.onMyKeyTransfer();
+                mykeyWalletEosController.onMyKeyTransfer();
             } else if (view == btnMYKEYSign) {
-                mykeyWalletController.onMyKeySign();
+                mykeyWalletEosController.onMyKeySign();
+            }
+            // Following are MYKEYSdk ETH method calls
+            else if (view == btnMYKEYEthAuthorize) {
+                mykeyWalletEthController.onAuthorize();
+            } else if (view == btnMYKEYEthContract) {
+                mykeyWalletEthController.onMyKeyContract();
+            } else if (view == btnMYKEYEthTransferEth) {
+                mykeyWalletEthController.onMyKeyTransferEth();
+            } else if (view == btnMYKEYEthTransferErc20) {
+                mykeyWalletEthController.onMyKeyTransferErc20();
+            } else if (view == btnMYKEYEthSign) {
+                mykeyWalletEthController.onMyKeySign();
             }
             // Following are 'stake token contract' api calls
             else if (view == btnGetBalance) {

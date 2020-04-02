@@ -7,6 +7,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.mykey.sdk.common.constants.ErrorCons;
 import com.mykey.sdk.common.util.LogUtil;
 import com.mykey.sdk.jni.entity.response.BaseJniResponse;
+import com.mykey.sdk.jni.entity.response.BinaryResponse;
 import com.mykey.sdk.jni.entity.response.EmptyResponse;
 import com.mykey.sdk.jni.entity.response.EncodeParamResponse;
 import com.mykey.sdk.jni.entity.response.KeyResponse;
@@ -79,6 +80,15 @@ public class MYKEYWalletJni {
             return "";
         }
         return signResponse.getSignedData();
+    }
+
+    public static String ethJsonToBinary(String abiJson, String method, String paramJson) {
+        BinaryResponse binaryResponse = getResultData(Mykeycore.ethJsonToBinary(abiJson, method, paramJson), new TypeReference<BaseJniResponse<BinaryResponse>>() {
+        });
+        if (null == binaryResponse) {
+            return "";
+        }
+        return binaryResponse.getBinary();
     }
 
 //    private static <T> T getResultData(String responseJson, TypeToken typeToken) {

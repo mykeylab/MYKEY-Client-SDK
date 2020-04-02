@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="simple" android:host="con.mykey.sdk" />
+                <data android:scheme="simple" android:host="com.mykey.sdk" />
             </intent-filter>
         </activity>
         <!--CallbackPage of SimpleWallet-->

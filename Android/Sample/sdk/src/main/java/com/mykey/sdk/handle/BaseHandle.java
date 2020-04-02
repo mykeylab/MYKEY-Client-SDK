@@ -16,15 +16,16 @@ import com.mykey.sdk.jni.entity.response.KeyResponse;
 
 public class BaseHandle {
 
-    protected void fillCommonData(BaseProtocolRequest authorizeAgreementRequest, String callBackId) {
+    protected void fillCommonData(BaseProtocolRequest authorizeAgreementRequest, String callBackId, String chain) {
         authorizeAgreementRequest.setProtocol(MemoryManager.getProtocol());
-        authorizeAgreementRequest.setVersion(ConfigCons.MYKEY_WALLET_VERSION);
+        authorizeAgreementRequest.setVersion(ConfigCons.MYKEY_PROTOCOL_VERSION);
         authorizeAgreementRequest.setAppKey(MemoryManager.getAppKey());
         authorizeAgreementRequest.setUuID(MemoryManager.getUserId());
         authorizeAgreementRequest.setDappName(MemoryManager.getDAppName());
         authorizeAgreementRequest.setDappIcon(MemoryManager.getDAppIcon());
         authorizeAgreementRequest.setCallback(getDAppCallBackUrl(MemoryManager.getCallBackPage(), authorizeAgreementRequest.getAction(), callBackId));
         authorizeAgreementRequest.setCallbackId(callBackId);
+        authorizeAgreementRequest.setChain(chain);
     }
 
     /**
@@ -43,7 +44,7 @@ public class BaseHandle {
         if (null == keyResponse || TextUtils.isEmpty(keyResponse.getPrivateKey())) {
             return "";
         }
-        // 存储私钥
+        // save private key
         SPManager.setServicePrivate(keyResponse.getPrivateKey());
         SPManager.setServicePublic(keyResponse.getPublicKey());
         return keyResponse.getPublicKey();

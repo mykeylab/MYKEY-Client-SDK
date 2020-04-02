@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/mykey_theme_active</item>
+        <item name="android:colorPrimaryDark">@color/mykey_theme_active</item>
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <!--<item name="android:windowBackground">@drawable/bg_welcome</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+    </style>
+    <style name="MyKeyActivity" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/mykey_page_top_bg</item>
+    </style>
+</resources>

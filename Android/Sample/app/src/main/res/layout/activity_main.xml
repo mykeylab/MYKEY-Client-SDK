@@ -24,7 +24,7 @@
                 android:id="@+id/mykey_sdk_deeplink"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:text="DeepLink"
                 android:layout_marginTop="10dp"
@@ -35,7 +35,7 @@
                 android:id="@+id/deeplink_mykey"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:text="MYKEYHome"
                 android:layout_marginTop="10dp"
@@ -48,7 +48,7 @@
                 android:id="@+id/deeplink_dapp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:text="DAppBigGame"
                 android:layout_marginTop="10dp"
@@ -56,12 +56,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/mykey_sdk_deeplink"
                 app:layout_constraintLeft_toRightOf="@+id/deeplink_mykey"
                 app:layout_constraintRight_toRightOf="parent"/>
-            <!--初始化选择-->
+            <!--Init Select-->
             <TextView
                 android:id="@+id/mykey_sdk_init_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:text="Initialization mode"
                 android:layout_marginTop="10dp"
@@ -73,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="MYKEYSdk"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
@@ -86,7 +86,7 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="MYKEYSdkSimple"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
@@ -98,7 +98,7 @@
                 android:id="@+id/simplewaller_mykeysdk_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:text="SimpleWallet(SW)+MYKEYSdk"
                 android:layout_marginTop="10dp"
@@ -106,119 +106,208 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"/>
             <Button
-                android:id="@+id/simple_authorize_mykey"
+                android:id="@+id/sample_authorize_mykey_any"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
-                android:text="MYKEY Authorize"
-                android:textSize="16sp"
+                android:text="MYKEY Authorize ANY"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="20dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_authorize_simple_wallet"
+                app:layout_constraintRight_toLeftOf="@+id/sample_authorize_simple_any"
                 app:layout_constraintTop_toBottomOf="@+id/simplewaller_mykeysdk_title"/>
+            <Button
+                android:id="@+id/sample_authorize_simple_any"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="SW Authorize ANY"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toRightOf="@+id/sample_authorize_mykey_any"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simplewaller_mykeysdk_title"/>
+            <Button
+                android:id="@+id/sample_authorize_mykey"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Authorize EOS"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/sample_authorize_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/sample_authorize_mykey_any"/>
 
             <Button
-                android:id="@+id/simple_authorize_simple_wallet"
+                android:id="@+id/sample_authorize_simple_wallet"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="SW Authorize"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="20dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_authorize_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_authorize_mykey"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/simplewaller_mykeysdk_title" />
+                app:layout_constraintTop_toBottomOf="@+id/sample_authorize_mykey_any" />
 
             <Button
-                android:id="@+id/simple_contract_mykey"
+                android:id="@+id/sample_contract_mykey"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
-                android:text="MYKEY Contract"
-                android:textSize="16sp"
+                android:text="MYKEY Contract EOS"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_authorize_simple_wallet"
-                app:layout_constraintTop_toBottomOf="@+id/simple_authorize_mykey"/>
+                app:layout_constraintRight_toLeftOf="@+id/sample_authorize_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/sample_authorize_mykey"/>
 
             <Button
-                android:id="@+id/simple_contract_simple_wallet"
+                android:id="@+id/sample_contract_simple_wallet"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="SW Contract"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_contract_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_contract_mykey"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/simple_authorize_mykey" />
+                app:layout_constraintTop_toBottomOf="@+id/sample_authorize_mykey" />
 
             <Button
-                android:id="@+id/simple_transfer_mykey"
+                android:id="@+id/sample_transfer_mykey"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
-                android:text="MYKEY Transfer"
-                android:textSize="16sp"
+                android:text="MYKEY Transfer EOS"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
-                app:layout_constraintTop_toBottomOf="@+id/simple_contract_mykey"/>
+                app:layout_constraintRight_toLeftOf="@+id/sample_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/sample_contract_mykey"/>
 
             <Button
-                android:id="@+id/simple_transfer_simple_wallet"
+                android:id="@+id/sample_transfer_simple_wallet"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="SW Transfer"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_transfer_mykey"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/simple_contract_mykey" />
+                app:layout_constraintTop_toBottomOf="@+id/sample_contract_mykey" />
 
             <Button
-                android:id="@+id/simple_sign_mykey"
+                android:id="@+id/sample_sign_mykey"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
-                android:text="MYKEY Sign"
-                android:textSize="16sp"
+                android:text="MYKEY Sign EOS"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
-                app:layout_constraintTop_toBottomOf="@+id/simple_transfer_mykey"/>
+                app:layout_constraintRight_toLeftOf="@+id/sample_transfer_simple_wallet"
+                app:layout_constraintTop_toBottomOf="@+id/sample_transfer_mykey"/>
 
             <Button
-                android:id="@+id/simple_sign_simple_wallet"
+                android:id="@+id/sample_sign_simple_wallet"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="SW Sign"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_transfer_mykey"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/simple_transfer_mykey" />
+                app:layout_constraintTop_toBottomOf="@+id/sample_transfer_mykey" />
+
+            <Button
+                android:id="@+id/sample_authorize_mykey_eth"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Authorize ETH"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_sign_simple_wallet"/>
+
+            <Button
+                android:id="@+id/sample_contract_mykey_eth"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Contract ETH"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_authorize_mykey_eth"/>
+
+            <Button
+                android:id="@+id/sample_transfer_mykey_eth"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Transfer ETH"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_contract_mykey_eth"/>
+
+            <Button
+                android:id="@+id/sample_transfer_mykey_erc20"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Transfer ERC20"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_transfer_mykey_eth"/>
+
+            <Button
+                android:id="@+id/sample_sign_mykey_eth"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Sign ETH"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_transfer_mykey_erc20"/>
 
             <!--EOS-Stake-Token API-->
             <TextView
                 android:id="@+id/bihu_plugin_api"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:text="EOS-Stake-Token API"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/simple_sign_mykey"
+                app:layout_constraintTop_toBottomOf="@+id/sample_sign_mykey_eth"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"/>
             <Button
@@ -226,12 +315,12 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="GetKeyBalance"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintRight_toLeftOf="@+id/sample_transfer_simple_wallet"
                 app:layout_constraintTop_toBottomOf="@+id/bihu_plugin_api"/>
 
             <Button
@@ -239,11 +328,11 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="GetUnlockList"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_transfer_mykey"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bihu_plugin_api" />
 
@@ -252,12 +341,12 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="GetBindInfo"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintRight_toLeftOf="@+id/sample_transfer_simple_wallet"
                 app:layout_constraintTop_toBottomOf="@+id/api_get_balance"/>
 
             <Button
@@ -265,20 +354,20 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="Empty"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_transfer_mykey"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/api_get_balance" />
 
-            <!--EOS-Stake-Token合约方法调用Example-->
+            <!--EOS-Stake-Token Contract Use Example-->
             <TextView
                 android:id="@+id/bihu_contract_example"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:text="EOS-Stake-Token Contract Method Example"
                 android:layout_marginTop="10dp"
@@ -291,12 +380,12 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="Stake"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintRight_toLeftOf="@+id/sample_transfer_simple_wallet"
                 app:layout_constraintTop_toBottomOf="@+id/bihu_contract_example"/>
 
             <Button
@@ -304,11 +393,11 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="Unstake"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_transfer_mykey"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bihu_contract_example" />
 
@@ -317,12 +406,12 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="TransferNormal"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintRight_toLeftOf="@+id/sample_transfer_simple_wallet"
                 app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_stake"/>
 
             <Button
@@ -330,11 +419,11 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="TransferAndStake"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_transfer_mykey"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_stake" />
 
@@ -343,12 +432,12 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="UnstakeAndTransfer"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/simple_transfer_simple_wallet"
+                app:layout_constraintRight_toLeftOf="@+id/sample_transfer_simple_wallet"
                 app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_transfer"/>
 
             <Button
@@ -356,11 +445,11 @@
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:text="Empty"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/mykey_title_black_light"
                 android:layout_marginTop="10dp"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toRightOf="@+id/simple_transfer_mykey"
+                app:layout_constraintLeft_toRightOf="@+id/sample_transfer_mykey"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/stake_token_contract_transfer" />
         </android.support.constraint.ConstraintLayout>

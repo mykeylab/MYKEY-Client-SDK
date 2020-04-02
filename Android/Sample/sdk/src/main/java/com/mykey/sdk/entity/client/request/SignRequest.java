@@ -33,4 +33,13 @@ public class SignRequest extends BaseRequest {
         this.info = info;
         return this;
     }
+
+    public String getChain() {
+        return chain;
+    }
+
+    public SignRequest setChain(String chain) {
+        this.chain = chain;
+        return this;
+    }
 }

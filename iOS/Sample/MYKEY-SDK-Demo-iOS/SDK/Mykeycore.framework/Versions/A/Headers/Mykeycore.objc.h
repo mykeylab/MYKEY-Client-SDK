@@ -46,6 +46,11 @@
 @end
 
 /**
+ * 产生一组公私钥
+ */
+FOUNDATION_EXPORT NSString* MykeycoreCreatePrivate(NSString* keystorePath);
+
+/**
  * 数据加密
  */
 FOUNDATION_EXPORT NSString* MykeycoreEncodeParam(NSString* param);
@@ -65,6 +70,10 @@ FOUNDATION_EXPORT NSString* MykeycoreInit(MykeycoreInitEntity* initEntity);
  * 获取SDK请求数据签名需要用的到私钥对应的公钥
  */
 FOUNDATION_EXPORT NSString* MykeycoreRequestPubKey(void);
+
+FOUNDATION_EXPORT NSString* MykeycoreSign(NSString* encryptPrivate, NSString* unsignedData);
+
+FOUNDATION_EXPORT NSString* MykeycoreVerifySign(NSString* publicKey, NSString* signedData, NSString* unsignedData);
 
 @class MykeycoreApiRequestCallback;
 

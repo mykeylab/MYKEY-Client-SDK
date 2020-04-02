@@ -21,8 +21,8 @@ package com.mykey.sdk.common.util.urlencode;
  * escaping with {@link com.google.common.html.HtmlEscapers} or {@link
  * com.google.common.xml.XmlEscapers}.
  *
- * github：https://github.com/google/guava
- * 最后一次提交id为：f264e9671e33744b4b7733cf3e4c8eb95be51999
+ * github:https://github.com/google/guava
+ * latest commit id:f264e9671e33744b4b7733cf3e4c8eb95be51999
  * @author David Beaumont
  * @author Chris Povirk
  * @since 15.0

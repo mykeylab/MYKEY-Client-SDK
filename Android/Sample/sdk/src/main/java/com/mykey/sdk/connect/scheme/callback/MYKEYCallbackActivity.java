@@ -39,7 +39,9 @@ public class MYKEYCallbackActivity extends Activity {
         }
         int result = StringUtil.toInt(uri.getQueryParameter(IntentKeyCons.INTENT_KEY_RESULT));
 //        String txId = uri.getQueryParameter(IntentKeyCons.INTENT_KEY_TX_ID);
-        String payload = uri.getQueryParameter(IntentKeyCons.INTENT_KEY_PAYLOAD);
+//        String payload = uri.getQueryParameter(IntentKeyCons.INTENT_KEY_PAYLOAD);
+        // Temporary scheme, in the future, playload needs Base64
+        String payload = uri.toString().indexOf(IntentKeyCons.INTENT_KEY_PAYLOAD) > 0 ? uri.toString().substring(uri.toString().indexOf(IntentKeyCons.INTENT_KEY_PAYLOAD) + IntentKeyCons.INTENT_KEY_PAYLOAD.length() + 1) : "";
         MYKEYCallbackManager.getInstance().dispatch(MYKEYCallbackResponseFactory.getResultResponse(callbackId, result, payload));
     }
 }

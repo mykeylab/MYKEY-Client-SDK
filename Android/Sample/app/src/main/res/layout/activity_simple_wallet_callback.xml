@@ -8,7 +8,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="34sp"
-        android:text="SimpleWallet结果页"
+        android:text="SimpleWallet Result"
         android:textColor="@color/mykey_title_black_light"
         android:padding="20dp"
         />

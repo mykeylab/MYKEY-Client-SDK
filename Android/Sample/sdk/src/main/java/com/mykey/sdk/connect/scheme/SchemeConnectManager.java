@@ -45,7 +45,7 @@ public class SchemeConnectManager {
             RootResponse rootResponse = MYKEYCallbackResponseFactory.getErrorResponse(ErrorCons.ERROR_CODE_MYKEY_NOT_INSTALL,
                     context.getResources().getString(R.string.error_txt_wake_up), mykeyWalletCallback);
             if (!MemoryManager.isDisableInstall()) {
-                // 如果配置允许则跳转到引导安装页面
+                // if uninstall, jump to guide to install
                 jumpToGuideInstall(context);
             }
             if (MemoryManager.isShowUpgradeTip()) {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.mykey.sdk.common.constants.WalletActionCons;
+import com.mykey.sdk.common.manager.MultiChainManager;
 import com.mykey.sdk.common.store.memory.MemoryManager;
 import com.mykey.sdk.common.store.sharepreference.SPManager;
 import com.mykey.sdk.common.util.JsonUtil;
@@ -18,6 +19,8 @@ import com.mykey.sdk.entity.client.request.action.BaseAction;
 import com.mykey.sdk.entity.client.request.action.ContractAction;
 import com.mykey.sdk.entity.client.request.action.TransferAction;
 import com.mykey.sdk.jni.MYKEYWalletJni;
+
+import java.util.List;
 
 /**
  * Created by zero on 2019/5/27.
@@ -47,8 +50,24 @@ public class ContractHandle extends BaseHandle {
         contractAgreementRequest.setSignedData(signedData);
         contractAgreementRequest.setServicePubKey(SPManager.getServicePublic());
 
-        fillCommonData(contractAgreementRequest, callBackId);
+        fillCommonData(contractAgreementRequest, callBackId, contractRequest.getChain());
+
+        feedInfoToAction(contractAgreementRequest.getActions(), contractRequest.getChain());
         return JsonUtil.toJson(contractAgreementRequest);
+    }
+
+    private void feedInfoToAction(List<BaseAction> actions, String chain) {
+        if (null == actions || actions.size() == 0) {
+            return;
+        }
+        for (BaseAction action : actions) {
+            // if action is ContractAction and binary is empty, set binary by chain
+            if (action instanceof ContractAction && TextUtils.isEmpty(((ContractAction) action).getBinary())) {
+                ((ContractAction) action).setBinary(MultiChainManager.getBinaryForContract(chain, (ContractAction) action));
+            }
+            // set chain
+            action.setChain(chain);
+        }
     }
 
     private void checkAndCreatePrivate(Context context) {

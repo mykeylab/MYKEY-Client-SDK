@@ -103,4 +103,13 @@ public class TransferRequest extends BaseRequest {
         this.callbackUrl = callBackUrl;
         return this;
     }
+
+    public String getChain() {
+        return chain;
+    }
+
+    public TransferRequest setChain(String chain) {
+        this.chain = chain;
+        return this;
+    }
 }

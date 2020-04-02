@@ -53,4 +53,13 @@ public class ContractRequest extends BaseRequest {
         this.callbackUrl = callBackUrl;
         return this;
     }
+
+    public String getChain() {
+        return chain;
+    }
+
+    public ContractRequest setChain(String chain) {
+        this.chain = chain;
+        return this;
+    }
 }

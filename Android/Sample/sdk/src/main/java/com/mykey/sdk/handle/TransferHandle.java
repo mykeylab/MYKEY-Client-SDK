@@ -33,7 +33,7 @@ public class TransferHandle extends BaseHandle {
         transferAgreementRequest.setAction(WalletActionCons.TRANSFER);
         transferAgreementRequest.setTransferUrl(transferRequest.getCallBackUrl());
 
-        fillCommonData(transferAgreementRequest, callBackId);
+        fillCommonData(transferAgreementRequest, callBackId, transferRequest.getChain());
         return JsonUtil.toJson(transferAgreementRequest);
     }
 }

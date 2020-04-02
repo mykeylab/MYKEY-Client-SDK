@@ -9,7 +9,7 @@ import com.mykey.sdk.common.util.LogUtil;
 import com.mykey.sdk.entity.client.request.ContractRequest;
 import com.mykey.sdk.entity.client.request.TransferRequest;
 import com.mykey.sdk.entity.client.request.action.ContractAction;
-import com.mykey.sdk.sample.entity.StakeEntity;
+import com.mykey.sdk.sample.entity.eos.StakeEntity;
 
 /**
  * Created by zero on 2019/6/5.
@@ -29,11 +29,10 @@ public class StakeTokenExampleController {
         ContractRequest contractRequest = new ContractRequest()
                 .setInfo("action memo");
         ContractAction contractActionRequest = new ContractAction();
-        contractActionRequest.setAccount("mkstaketoken")
+        contractActionRequest.setAccount("hellomykey11")
                 .setName("stake")
-                .setInfo("Execute contract lock 1.0000 SYS")
-                // uiuiui111111
-                .setData(new StakeEntity().setOwner("mykeyhulu525").setQuantity("1.0000 SYS"));
+                .setInfo("Execute contract lock 1.0000 ADD")
+                .setData(new StakeEntity().setOwner("bobbobbobbob").setQuantity("1.0000 ADD"));
         contractRequest.addAction(contractActionRequest);
 
         MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
@@ -158,8 +157,9 @@ public class StakeTokenExampleController {
                 .setMemo("Transfer:FromStakedToLiquid")
                 .setContractName("hellomykey11")
                 .setSymbol("ADD ")
-                // 此处需要注意，从UnStake中转账的数额应该是需要转账的数额+手续费，如果UnStake中可用币不足会报错
-                // UnStake中可用币=UnStake的币-解锁中的币
+                // The amount transferred from unstake should be the amount to be transferred + handling fee.
+                // If the available currency in unstake is insufficient, an error will be reported
+                // Currency available in unstake = unstake currency - currency in unlock
                 .setInfo("FromStakedToLiquid")
                 .setDecimal(4);
         MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {

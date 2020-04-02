@@ -46,7 +46,6 @@ public class MKUtil {
         if (null != jsonObject) {
             return jsonObject;
         }
-        // 转Json出错，说明并不是json，直接返回
         return obj;
     }
 }

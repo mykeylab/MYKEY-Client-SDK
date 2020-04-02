@@ -3,11 +3,11 @@ package com.mykey.sdk;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.mykey.sdk.connect.scheme.callback.MYKEYCallbackManager;
-import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.common.constants.ErrorCons;
 import com.mykey.sdk.common.store.memory.MemoryManager;
 import com.mykey.sdk.common.util.JsonUtil;
+import com.mykey.sdk.connect.scheme.callback.MYKEYCallbackManager;
+import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.entity.client.request.AuthorizeRequest;
 import com.mykey.sdk.entity.client.request.ContractRequest;
 import com.mykey.sdk.entity.client.request.InitRequest;
@@ -128,28 +128,8 @@ public class MYKEYSdk {
         if (!checkInit(callback)) {
             return false;
         }
-//        if (!checkAppInstall(callback)) {
-//            return false;
-//        }
         return true;
     }
-
-//    /**
-//     * Detect whether MYKEY is installed
-//     * @param callback
-//     * @return
-//     */
-//    private boolean checkAppInstall(MYKEYWalletCallback callback) {
-//        if (SystemUtil.apkInstalled(context, ConfigCons.MYKEY_PACKAGE_NAME)) {
-//            return true;
-//        }
-//        callback.onError(JsonUtil.toJson(new PayloadResponse(ErrorCons.ERROR_CODE_MYKEY_NOT_INSTALL)));
-//        if (!MemoryManager.isDisableInstall()) {
-//            // 如果配置允许则跳转到引导安装页面
-//            jumpToGuideInstall();
-//        }
-//        return false;
-//    }
 
     /**
      * Checks whether it has been initialized
@@ -163,10 +143,5 @@ public class MYKEYSdk {
         }
         return true;
     }
-
-//    private void jumpToGuideInstall() {
-//        Intent intent = new Intent(context, GuideInstallActivity.class);
-//        context.startActivity(intent);
-//    }
 
 }

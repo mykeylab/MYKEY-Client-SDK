@@ -1,11 +1,9 @@
 package com.mykey.sdk.handle;
 
 import android.content.Context;
-import android.text.TextUtils;
 
 import com.mykey.sdk.common.constants.WalletActionCons;
 import com.mykey.sdk.common.store.memory.MemoryManager;
-import com.mykey.sdk.common.store.sharepreference.SPManager;
 import com.mykey.sdk.common.util.JsonUtil;
 import com.mykey.sdk.connect.scheme.SchemeConnectManager;
 import com.mykey.sdk.connect.scheme.callback.MYKEYCallbackManager;
@@ -13,7 +11,6 @@ import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
 import com.mykey.sdk.entity.agreement.request.AuthorizeProtocolRequest;
 import com.mykey.sdk.entity.client.request.AuthorizeRequest;
 import com.mykey.sdk.jni.MYKEYWalletJni;
-import com.mykey.sdk.jni.entity.response.KeyResponse;
 
 /**
  * Created by zero on 2019/5/27.
@@ -21,7 +18,7 @@ import com.mykey.sdk.jni.entity.response.KeyResponse;
 
 public class AuthorizeHandle extends BaseHandle {
     public void handle(Context context, AuthorizeRequest authorizeRequest, MYKEYWalletCallback mykeyWalletCallback) {
-        // 获取一组私钥
+        // create private key
         String servicePublicKey = retrievePrivateKey(context);
         String protocolJson = getAuthorizeAgreementJson(authorizeRequest, MYKEYCallbackManager.getInstance().getCallBackId(mykeyWalletCallback), servicePublicKey);
         SchemeConnectManager.getInstance().sendToMYKEY(context, protocolJson, mykeyWalletCallback);
@@ -38,7 +35,7 @@ public class AuthorizeHandle extends BaseHandle {
         authorizeAgreementRequest.setRequestPubKey(MYKEYWalletJni.getRequestPubKey());
         authorizeAgreementRequest.setServicePubKey(publicKey);
 
-        fillCommonData(authorizeAgreementRequest, callBackId);
+        fillCommonData(authorizeAgreementRequest, callBackId, authorizeRequest.getChain());
         return JsonUtil.toJson(authorizeAgreementRequest);
     }
 

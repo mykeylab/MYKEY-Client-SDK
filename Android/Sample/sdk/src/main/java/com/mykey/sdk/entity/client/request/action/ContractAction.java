@@ -8,13 +8,34 @@ import com.mykey.sdk.common.util.MKUtil;
 
 public class ContractAction extends BaseAction {
     private Object data;
+    private String abi;
+    private String binary;
+
+    public String getBinary() {
+        return binary;
+    }
+
+    public ContractAction setBinary(String binary) {
+        this.binary = binary;
+        return this;
+    }
+
+    public String getAbi() {
+        return abi;
+    }
+
+    public ContractAction setAbi(String abi) {
+        this.abi = abi;
+        return this;
+    }
 
     public Object getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public ContractAction setData(Object data) {
         this.data = MKUtil.parseToJSONObject(data);
+        return this;
     }
 
     public String getInfo() {

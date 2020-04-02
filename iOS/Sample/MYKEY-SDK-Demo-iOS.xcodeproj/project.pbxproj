@@ -7,229 +7,492 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4851A0FE22CA0054006B0DF4 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851A0FD22CA0054006B0DF4 /* ResultViewController.swift */; };
-		48A3E8F822C9A27C00D3392F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3E8F722C9A27C00D3392F /* AppDelegate.swift */; };
-		48A3E8FA22C9A27C00D3392F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3E8F922C9A27C00D3392F /* ViewController.swift */; };
-		48A3E8FD22C9A27C00D3392F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A3E8FB22C9A27C00D3392F /* Main.storyboard */; };
-		48A3E8FF22C9A27D00D3392F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A3E8FE22C9A27D00D3392F /* Assets.xcassets */; };
-		48A3E90222C9A27D00D3392F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A3E90022C9A27D00D3392F /* LaunchScreen.storyboard */; };
-		48A3E91122C9A8A600D3392F /* ExampleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3E90A22C9A8A600D3392F /* ExampleListViewController.swift */; };
-		48A3E91222C9A8A600D3392F /* ExampleListSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3E90B22C9A8A600D3392F /* ExampleListSectionHeaderView.swift */; };
-		48A3E91322C9A8A600D3392F /* ExampleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3E90C22C9A8A600D3392F /* ExampleListCell.swift */; };
-		48A3E91422C9A8A600D3392F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3E90D22C9A8A600D3392F /* Toast.swift */; };
-		48FA272322CAF87B007A76EF /* Mykeycore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FA272222CAF87B007A76EF /* Mykeycore.framework */; };
-		48FA27BF22CB2D80007A76EF /* MYKEYWalletLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FA27BE22CB2D80007A76EF /* MYKEYWalletLib.framework */; };
-		48FE47C022DDDD710087231D /* MYKEYResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48FE47BF22DDDD700087231D /* MYKEYResource.bundle */; };
+		48A639F7242F4180003943D8 /* ChainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A639F6242F4180003943D8 /* ChainType.swift */; };
+		48C76A84239517870027C6AF /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C76A83239517870027C6AF /* Double+extension.swift */; };
+		48D2C05E22E80D29004DDAE0 /* InitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C05D22E80D29004DDAE0 /* InitEntity.swift */; };
+		48E85E1822E081B800DC2277 /* RectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E85E1722E081B800DC2277 /* RectUtil.swift */; };
+		48FA273622CAFDDE007A76EF /* MYKEYWalletLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 48FA273422CAFDDE007A76EF /* MYKEYWalletLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48FA278222CAFF50007A76EF /* UIDevice+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA274722CAFF50007A76EF /* UIDevice+extension.swift */; };
+		48FA278322CAFF50007A76EF /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA274822CAFF50007A76EF /* UIFont+extension.swift */; };
+		48FA278422CAFF50007A76EF /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA274922CAFF50007A76EF /* UIColor+extension.swift */; };
+		48FA278522CAFF50007A76EF /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA274A22CAFF50007A76EF /* String+extension.swift */; };
+		48FA278622CAFF50007A76EF /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA274B22CAFF50007A76EF /* Dictionary+extension.swift */; };
+		48FA278822CAFF50007A76EF /* MYKEYResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA274E22CAFF50007A76EF /* MYKEYResponse.swift */; };
+		48FA278922CAFF50007A76EF /* CallBackKeyConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA274F22CAFF50007A76EF /* CallBackKeyConst.swift */; };
+		48FA278B22CAFF50007A76EF /* MYKEYApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275122CAFF50007A76EF /* MYKEYApiResponse.swift */; };
+		48FA278C22CAFF50007A76EF /* MYKEYWalletResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275222CAFF50007A76EF /* MYKEYWalletResp.swift */; };
+		48FA278D22CAFF50007A76EF /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275422CAFF50007A76EF /* EmptyResponse.swift */; };
+		48FA278E22CAFF50007A76EF /* BaseJniResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275522CAFF50007A76EF /* BaseJniResponse.swift */; };
+		48FA278F22CAFF50007A76EF /* EncodeParamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275622CAFF50007A76EF /* EncodeParamResponse.swift */; };
+		48FA279022CAFF50007A76EF /* RequestPubKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275722CAFF50007A76EF /* RequestPubKeyResponse.swift */; };
+		48FA279122CAFF50007A76EF /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275922CAFF50007A76EF /* DeviceUtil.swift */; };
+		48FA279322CAFF50007A76EF /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275C22CAFF50007A76EF /* DownloadViewController.swift */; };
+		48FA279522CAFF50007A76EF /* WalletActionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA275F22CAFF50007A76EF /* WalletActionConstants.swift */; };
+		48FA279622CAFF50007A76EF /* RequestHeaderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276022CAFF50007A76EF /* RequestHeaderConstants.swift */; };
+		48FA279722CAFF50007A76EF /* IntentKeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276122CAFF50007A76EF /* IntentKeyConstants.swift */; };
+		48FA279822CAFF50007A76EF /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276222CAFF50007A76EF /* ErrorCode.swift */; };
+		48FA279922CAFF50007A76EF /* ConfigConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276322CAFF50007A76EF /* ConfigConstants.swift */; };
+		48FA279A22CAFF50007A76EF /* MYKEYWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276522CAFF50007A76EF /* MYKEYWallet.swift */; };
+		48FA279B22CAFF50007A76EF /* InitHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276622CAFF50007A76EF /* InitHandle.swift */; };
+		48FA279E22CAFF50007A76EF /* MYKEYWalletJni.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276922CAFF50007A76EF /* MYKEYWalletJni.swift */; };
+		48FA27A022CAFF50007A76EF /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276D22CAFF50007A76EF /* BaseRequest.swift */; };
+		48FA27A122CAFF50007A76EF /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276E22CAFF50007A76EF /* AuthorizeRequest.swift */; };
+		48FA27A222CAFF50007A76EF /* SignRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA276F22CAFF50007A76EF /* SignRequest.swift */; };
+		48FA27A322CAFF50007A76EF /* TransferRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277022CAFF50007A76EF /* TransferRequest.swift */; };
+		48FA27A422CAFF50007A76EF /* InitSimpleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277122CAFF50007A76EF /* InitSimpleRequest.swift */; };
+		48FA27A522CAFF50007A76EF /* ContractRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277222CAFF50007A76EF /* ContractRequest.swift */; };
+		48FA27A622CAFF50007A76EF /* InitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277322CAFF50007A76EF /* InitRequest.swift */; };
+		48FA27A722CAFF50007A76EF /* BaseProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277522CAFF50007A76EF /* BaseProtocolRequest.swift */; };
+		48FA27A822CAFF50007A76EF /* TransferProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277622CAFF50007A76EF /* TransferProtocolRequest.swift */; };
+		48FA27A922CAFF50007A76EF /* AuthorizeProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277722CAFF50007A76EF /* AuthorizeProtocolRequest.swift */; };
+		48FA27AA22CAFF50007A76EF /* ContractProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277822CAFF50007A76EF /* ContractProtocolRequest.swift */; };
+		48FA27AB22CAFF50007A76EF /* SignProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277922CAFF50007A76EF /* SignProtocolRequest.swift */; };
+		48FA27AC22CAFF50007A76EF /* ContractAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277B22CAFF50007A76EF /* ContractAction.swift */; };
+		48FA27AD22CAFF50007A76EF /* TransferAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277C22CAFF50007A76EF /* TransferAction.swift */; };
+		48FA27AE22CAFF50007A76EF /* TransferData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277E22CAFF50007A76EF /* TransferData.swift */; };
+		48FA27AF22CAFF50007A76EF /* BaseAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA277F22CAFF50007A76EF /* BaseAction.swift */; };
+		48FA27B022CAFF50007A76EF /* JniUserAgentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA278122CAFF50007A76EF /* JniUserAgentRequest.swift */; };
+		48FA27B222CAFF65007A76EF /* Mykeycore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FA27B122CAFF65007A76EF /* Mykeycore.framework */; };
+		48FA27B522CAFFA0007A76EF /* MYKEYResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48FA27B422CAFFA0007A76EF /* MYKEYResource.bundle */; };
+		48FA27C422CCA3D0007A76EF /* MYKEYErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA27C322CCA3D0007A76EF /* MYKEYErrorResponse.swift */; };
+		48FE479222DC69E10087231D /* MKLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE479122DC69E00087231D /* MKLocalizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4851A0FD22CA0054006B0DF4 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		48A3E8F422C9A27C00D3392F /* MYKEY-SDK-Demo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MYKEY-SDK-Demo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		48A3E8F722C9A27C00D3392F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48A3E8F922C9A27C00D3392F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		48A3E8FC22C9A27C00D3392F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		48A3E8FE22C9A27D00D3392F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		48A3E90122C9A27D00D3392F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		48A3E90322C9A27D00D3392F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48A3E90A22C9A8A600D3392F /* ExampleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleListViewController.swift; sourceTree = "<group>"; };
-		48A3E90B22C9A8A600D3392F /* ExampleListSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleListSectionHeaderView.swift; sourceTree = "<group>"; };
-		48A3E90C22C9A8A600D3392F /* ExampleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleListCell.swift; sourceTree = "<group>"; };
-		48A3E90D22C9A8A600D3392F /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		48FA272222CAF87B007A76EF /* Mykeycore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mykeycore.framework; sourceTree = "<group>"; };
-		48FA27BE22CB2D80007A76EF /* MYKEYWalletLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MYKEYWalletLib.framework; sourceTree = "<group>"; };
-		48FE47BF22DDDD700087231D /* MYKEYResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MYKEYResource.bundle; sourceTree = "<group>"; };
+		48A639F6242F4180003943D8 /* ChainType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainType.swift; sourceTree = "<group>"; };
+		48C76A83239517870027C6AF /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
+		48D2C05D22E80D29004DDAE0 /* InitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitEntity.swift; sourceTree = "<group>"; };
+		48E85E1722E081B800DC2277 /* RectUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectUtil.swift; sourceTree = "<group>"; };
+		48FA273122CAFDDE007A76EF /* MYKEYWalletLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYKEYWalletLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48FA273422CAFDDE007A76EF /* MYKEYWalletLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYKEYWalletLib.h; sourceTree = "<group>"; };
+		48FA273522CAFDDE007A76EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48FA274722CAFF50007A76EF /* UIDevice+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
+		48FA274822CAFF50007A76EF /* UIFont+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
+		48FA274922CAFF50007A76EF /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		48FA274A22CAFF50007A76EF /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		48FA274B22CAFF50007A76EF /* Dictionary+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+extension.swift"; sourceTree = "<group>"; };
+		48FA274E22CAFF50007A76EF /* MYKEYResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYKEYResponse.swift; sourceTree = "<group>"; };
+		48FA274F22CAFF50007A76EF /* CallBackKeyConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallBackKeyConst.swift; sourceTree = "<group>"; };
+		48FA275122CAFF50007A76EF /* MYKEYApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYKEYApiResponse.swift; sourceTree = "<group>"; };
+		48FA275222CAFF50007A76EF /* MYKEYWalletResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYKEYWalletResp.swift; sourceTree = "<group>"; };
+		48FA275422CAFF50007A76EF /* EmptyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		48FA275522CAFF50007A76EF /* BaseJniResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseJniResponse.swift; sourceTree = "<group>"; };
+		48FA275622CAFF50007A76EF /* EncodeParamResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodeParamResponse.swift; sourceTree = "<group>"; };
+		48FA275722CAFF50007A76EF /* RequestPubKeyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPubKeyResponse.swift; sourceTree = "<group>"; };
+		48FA275922CAFF50007A76EF /* DeviceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
+		48FA275C22CAFF50007A76EF /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		48FA275F22CAFF50007A76EF /* WalletActionConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletActionConstants.swift; sourceTree = "<group>"; };
+		48FA276022CAFF50007A76EF /* RequestHeaderConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHeaderConstants.swift; sourceTree = "<group>"; };
+		48FA276122CAFF50007A76EF /* IntentKeyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentKeyConstants.swift; sourceTree = "<group>"; };
+		48FA276222CAFF50007A76EF /* ErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		48FA276322CAFF50007A76EF /* ConfigConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigConstants.swift; sourceTree = "<group>"; };
+		48FA276522CAFF50007A76EF /* MYKEYWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYKEYWallet.swift; sourceTree = "<group>"; };
+		48FA276622CAFF50007A76EF /* InitHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitHandle.swift; sourceTree = "<group>"; };
+		48FA276922CAFF50007A76EF /* MYKEYWalletJni.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYKEYWalletJni.swift; sourceTree = "<group>"; };
+		48FA276D22CAFF50007A76EF /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		48FA276E22CAFF50007A76EF /* AuthorizeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
+		48FA276F22CAFF50007A76EF /* SignRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignRequest.swift; sourceTree = "<group>"; };
+		48FA277022CAFF50007A76EF /* TransferRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferRequest.swift; sourceTree = "<group>"; };
+		48FA277122CAFF50007A76EF /* InitSimpleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitSimpleRequest.swift; sourceTree = "<group>"; };
+		48FA277222CAFF50007A76EF /* ContractRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractRequest.swift; sourceTree = "<group>"; };
+		48FA277322CAFF50007A76EF /* InitRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitRequest.swift; sourceTree = "<group>"; };
+		48FA277522CAFF50007A76EF /* BaseProtocolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProtocolRequest.swift; sourceTree = "<group>"; };
+		48FA277622CAFF50007A76EF /* TransferProtocolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferProtocolRequest.swift; sourceTree = "<group>"; };
+		48FA277722CAFF50007A76EF /* AuthorizeProtocolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeProtocolRequest.swift; sourceTree = "<group>"; };
+		48FA277822CAFF50007A76EF /* ContractProtocolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractProtocolRequest.swift; sourceTree = "<group>"; };
+		48FA277922CAFF50007A76EF /* SignProtocolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignProtocolRequest.swift; sourceTree = "<group>"; };
+		48FA277B22CAFF50007A76EF /* ContractAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractAction.swift; sourceTree = "<group>"; };
+		48FA277C22CAFF50007A76EF /* TransferAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferAction.swift; sourceTree = "<group>"; };
+		48FA277E22CAFF50007A76EF /* TransferData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferData.swift; sourceTree = "<group>"; };
+		48FA277F22CAFF50007A76EF /* BaseAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAction.swift; sourceTree = "<group>"; };
+		48FA278122CAFF50007A76EF /* JniUserAgentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JniUserAgentRequest.swift; sourceTree = "<group>"; };
+		48FA27B122CAFF65007A76EF /* Mykeycore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mykeycore.framework; sourceTree = "<group>"; };
+		48FA27B422CAFFA0007A76EF /* MYKEYResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MYKEYResource.bundle; sourceTree = "<group>"; };
+		48FA27C322CCA3D0007A76EF /* MYKEYErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYKEYErrorResponse.swift; sourceTree = "<group>"; };
+		48FE479122DC69E00087231D /* MKLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKLocalizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		48A3E8F122C9A27C00D3392F /* Frameworks */ = {
+		48FA272E22CAFDDE007A76EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48FA272322CAF87B007A76EF /* Mykeycore.framework in Frameworks */,
-				48FA27BF22CB2D80007A76EF /* MYKEYWalletLib.framework in Frameworks */,
+				48FA27B222CAFF65007A76EF /* Mykeycore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		48A3E8EB22C9A27C00D3392F = {
-			isa = PBXGroup;
-			children = (
-				48A3E8F622C9A27C00D3392F /* MYKEY-SDK-Demo-iOS */,
-				48A3E8F522C9A27C00D3392F /* Products */,
-				48FA27B722CB07CB007A76EF /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		48A3E8F522C9A27C00D3392F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				48A3E8F422C9A27C00D3392F /* MYKEY-SDK-Demo-iOS.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		48A3E8F622C9A27C00D3392F /* MYKEY-SDK-Demo-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				48A3E90922C9A8A600D3392F /* Class */,
-				48A3E90E22C9A8A600D3392F /* SDK */,
-				48A3E8F722C9A27C00D3392F /* AppDelegate.swift */,
-				48A3E8F922C9A27C00D3392F /* ViewController.swift */,
-				48A3E90D22C9A8A600D3392F /* Toast.swift */,
-				48A3E8FB22C9A27C00D3392F /* Main.storyboard */,
-				48A3E8FE22C9A27D00D3392F /* Assets.xcassets */,
-				48A3E90022C9A27D00D3392F /* LaunchScreen.storyboard */,
-				48A3E90322C9A27D00D3392F /* Info.plist */,
-			);
-			path = "MYKEY-SDK-Demo-iOS";
-			sourceTree = "<group>";
-		};
-		48A3E90922C9A8A600D3392F /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				48FA27C222CC5ACE007A76EF /* View */,
-				48A3E90A22C9A8A600D3392F /* ExampleListViewController.swift */,
-				4851A0FD22CA0054006B0DF4 /* ResultViewController.swift */,
-			);
-			path = Class;
-			sourceTree = "<group>";
-		};
-		48A3E90E22C9A8A600D3392F /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				48FE47BF22DDDD700087231D /* MYKEYResource.bundle */,
-				48FA27BE22CB2D80007A76EF /* MYKEYWalletLib.framework */,
-				48FA272222CAF87B007A76EF /* Mykeycore.framework */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
-		48FA27B722CB07CB007A76EF /* Frameworks */ = {
+		4885B7E622E5A4A8005F6EE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		48FA27C222CC5ACE007A76EF /* View */ = {
+		48FA272722CAFDDE007A76EF = {
 			isa = PBXGroup;
 			children = (
-				48A3E90B22C9A8A600D3392F /* ExampleListSectionHeaderView.swift */,
-				48A3E90C22C9A8A600D3392F /* ExampleListCell.swift */,
+				48FA273322CAFDDE007A76EF /* MYKEYWalletLib */,
+				48FA273222CAFDDE007A76EF /* Products */,
+				4885B7E622E5A4A8005F6EE6 /* Frameworks */,
 			);
-			path = View;
 			sourceTree = "<group>";
+		};
+		48FA273222CAFDDE007A76EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48FA273122CAFDDE007A76EF /* MYKEYWalletLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48FA273322CAFDDE007A76EF /* MYKEYWalletLib */ = {
+			isa = PBXGroup;
+			children = (
+				48FA274522CAFF50007A76EF /* Class */,
+				48FA274322CAFE5F007A76EF /* SDK */,
+				48FA27B322CAFFA0007A76EF /* Resource */,
+				48FA273422CAFDDE007A76EF /* MYKEYWalletLib.h */,
+				48FA273522CAFDDE007A76EF /* Info.plist */,
+			);
+			path = MYKEYWalletLib;
+			sourceTree = "<group>";
+		};
+		48FA274322CAFE5F007A76EF /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				48FA27B122CAFF65007A76EF /* Mykeycore.framework */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		48FA274522CAFF50007A76EF /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				48FA274622CAFF50007A76EF /* extension */,
+				48FA274D22CAFF50007A76EF /* Response */,
+				48FA275822CAFF50007A76EF /* Util */,
+				48FA275B22CAFF50007A76EF /* Controller */,
+				48FA275D22CAFF50007A76EF /* Const */,
+				48FA276422CAFF50007A76EF /* Manager */,
+				48FA276B22CAFF50007A76EF /* Request */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		48FA274622CAFF50007A76EF /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				48FA274722CAFF50007A76EF /* UIDevice+extension.swift */,
+				48FA274822CAFF50007A76EF /* UIFont+extension.swift */,
+				48FA274922CAFF50007A76EF /* UIColor+extension.swift */,
+				48FA274A22CAFF50007A76EF /* String+extension.swift */,
+				48FA274B22CAFF50007A76EF /* Dictionary+extension.swift */,
+				48C76A83239517870027C6AF /* Double+extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		48FA274D22CAFF50007A76EF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				48FA274E22CAFF50007A76EF /* MYKEYResponse.swift */,
+				48FA274F22CAFF50007A76EF /* CallBackKeyConst.swift */,
+				48FA275122CAFF50007A76EF /* MYKEYApiResponse.swift */,
+				48FA275222CAFF50007A76EF /* MYKEYWalletResp.swift */,
+				48FA27C322CCA3D0007A76EF /* MYKEYErrorResponse.swift */,
+				48FA275322CAFF50007A76EF /* Jni */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		48FA275322CAFF50007A76EF /* Jni */ = {
+			isa = PBXGroup;
+			children = (
+				48FA275422CAFF50007A76EF /* EmptyResponse.swift */,
+				48FA275522CAFF50007A76EF /* BaseJniResponse.swift */,
+				48FA275622CAFF50007A76EF /* EncodeParamResponse.swift */,
+				48FA275722CAFF50007A76EF /* RequestPubKeyResponse.swift */,
+			);
+			path = Jni;
+			sourceTree = "<group>";
+		};
+		48FA275822CAFF50007A76EF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				48FE479122DC69E00087231D /* MKLocalizable.swift */,
+				48FA275922CAFF50007A76EF /* DeviceUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		48FA275B22CAFF50007A76EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				48FA275C22CAFF50007A76EF /* DownloadViewController.swift */,
+				48E85E1722E081B800DC2277 /* RectUtil.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		48FA275D22CAFF50007A76EF /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				48A639F6242F4180003943D8 /* ChainType.swift */,
+				48FA275F22CAFF50007A76EF /* WalletActionConstants.swift */,
+				48FA276022CAFF50007A76EF /* RequestHeaderConstants.swift */,
+				48FA276122CAFF50007A76EF /* IntentKeyConstants.swift */,
+				48FA276222CAFF50007A76EF /* ErrorCode.swift */,
+				48FA276322CAFF50007A76EF /* ConfigConstants.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		48FA276422CAFF50007A76EF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				48FA276522CAFF50007A76EF /* MYKEYWallet.swift */,
+				48FA276622CAFF50007A76EF /* InitHandle.swift */,
+				48D2C05D22E80D29004DDAE0 /* InitEntity.swift */,
+				48FA276922CAFF50007A76EF /* MYKEYWalletJni.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		48FA276B22CAFF50007A76EF /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				48FA276C22CAFF50007A76EF /* MYKEY */,
+				48FA277422CAFF50007A76EF /* Protocol */,
+				48FA277A22CAFF50007A76EF /* Action */,
+				48FA278022CAFF50007A76EF /* Jni */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		48FA276C22CAFF50007A76EF /* MYKEY */ = {
+			isa = PBXGroup;
+			children = (
+				48FA276D22CAFF50007A76EF /* BaseRequest.swift */,
+				48FA276E22CAFF50007A76EF /* AuthorizeRequest.swift */,
+				48FA276F22CAFF50007A76EF /* SignRequest.swift */,
+				48FA277022CAFF50007A76EF /* TransferRequest.swift */,
+				48FA277122CAFF50007A76EF /* InitSimpleRequest.swift */,
+				48FA277222CAFF50007A76EF /* ContractRequest.swift */,
+				48FA277322CAFF50007A76EF /* InitRequest.swift */,
+			);
+			path = MYKEY;
+			sourceTree = "<group>";
+		};
+		48FA277422CAFF50007A76EF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				48FA277522CAFF50007A76EF /* BaseProtocolRequest.swift */,
+				48FA277622CAFF50007A76EF /* TransferProtocolRequest.swift */,
+				48FA277722CAFF50007A76EF /* AuthorizeProtocolRequest.swift */,
+				48FA277822CAFF50007A76EF /* ContractProtocolRequest.swift */,
+				48FA277922CAFF50007A76EF /* SignProtocolRequest.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		48FA277A22CAFF50007A76EF /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				48FA277B22CAFF50007A76EF /* ContractAction.swift */,
+				48FA277C22CAFF50007A76EF /* TransferAction.swift */,
+				48FA277D22CAFF50007A76EF /* Data */,
+				48FA277F22CAFF50007A76EF /* BaseAction.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		48FA277D22CAFF50007A76EF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				48FA277E22CAFF50007A76EF /* TransferData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		48FA278022CAFF50007A76EF /* Jni */ = {
+			isa = PBXGroup;
+			children = (
+				48FA278122CAFF50007A76EF /* JniUserAgentRequest.swift */,
+			);
+			path = Jni;
+			sourceTree = "<group>";
+		};
+		48FA27B322CAFFA0007A76EF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				48FA27B422CAFFA0007A76EF /* MYKEYResource.bundle */,
+			);
+			name = Resource;
+			path = MYKEYWalletLib/Resource;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		48FA272C22CAFDDE007A76EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48FA273622CAFDDE007A76EF /* MYKEYWalletLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		48A3E8F322C9A27C00D3392F /* MYKEY-SDK-Demo-iOS */ = {
+		48FA273022CAFDDE007A76EF /* MYKEYWalletLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48A3E90622C9A27D00D3392F /* Build configuration list for PBXNativeTarget "MYKEY-SDK-Demo-iOS" */;
+			buildConfigurationList = 48FA273922CAFDDE007A76EF /* Build configuration list for PBXNativeTarget "MYKEYWalletLib" */;
 			buildPhases = (
-				48A3E8F022C9A27C00D3392F /* Sources */,
-				48A3E8F122C9A27C00D3392F /* Frameworks */,
-				48A3E8F222C9A27C00D3392F /* Resources */,
+				48FA272C22CAFDDE007A76EF /* Headers */,
+				48FA272D22CAFDDE007A76EF /* Sources */,
+				48FA272E22CAFDDE007A76EF /* Frameworks */,
+				48FA272F22CAFDDE007A76EF /* Resources */,
+				48FA27C622CDA012007A76EF /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "MYKEY-SDK-Demo-iOS";
-			productName = "MYKEY-SDK-Demo-iOS";
-			productReference = 48A3E8F422C9A27C00D3392F /* MYKEY-SDK-Demo-iOS.app */;
-			productType = "com.apple.product-type.application";
+			name = MYKEYWalletLib;
+			productName = MYKEYWalletLib;
+			productReference = 48FA273122CAFDDE007A76EF /* MYKEYWalletLib.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		48A3E8EC22C9A27C00D3392F /* Project object */ = {
+		48FA272822CAFDDE007A76EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = MYKEYLab;
 				TargetAttributes = {
-					48A3E8F322C9A27C00D3392F = {
+					48FA273022CAFDDE007A76EF = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
-			buildConfigurationList = 48A3E8EF22C9A27C00D3392F /* Build configuration list for PBXProject "MYKEY-SDK-Demo-iOS" */;
+			buildConfigurationList = 48FA272B22CAFDDE007A76EF /* Build configuration list for PBXProject "MYKEYWalletLib" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				"zh-Hans",
 			);
-			mainGroup = 48A3E8EB22C9A27C00D3392F;
-			productRefGroup = 48A3E8F522C9A27C00D3392F /* Products */;
+			mainGroup = 48FA272722CAFDDE007A76EF;
+			productRefGroup = 48FA273222CAFDDE007A76EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48A3E8F322C9A27C00D3392F /* MYKEY-SDK-Demo-iOS */,
+				48FA273022CAFDDE007A76EF /* MYKEYWalletLib */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		48A3E8F222C9A27C00D3392F /* Resources */ = {
+		48FA272F22CAFDDE007A76EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A3E90222C9A27D00D3392F /* LaunchScreen.storyboard in Resources */,
-				48A3E8FF22C9A27D00D3392F /* Assets.xcassets in Resources */,
-				48A3E8FD22C9A27C00D3392F /* Main.storyboard in Resources */,
-				48FE47C022DDDD710087231D /* MYKEYResource.bundle in Resources */,
+				48FA27B522CAFFA0007A76EF /* MYKEYResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48FA27C622CDA012007A76EF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${ACTION}\" = \"build\" ]\nthen\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}.framework\n\nDEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\n\nSIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\n\n\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n#ditto \"${DEVICE_DIR}/Headers\" \"${INSTALL_DIR}/Headers\"\n\nlipo -create \"${DEVICE_DIR}/${PROJECT_NAME}\" \"${SIMULATOR_DIR}/${PROJECT_NAME}\" -output \"${INSTALL_DIR}/${PROJECT_NAME}\"\n\n#open \"${DEVICE_DIR}\"\nopen \"${SRCROOT}/Products\"\n#open \"${INSTALL_DIR}\"\n\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		48A3E8F022C9A27C00D3392F /* Sources */ = {
+		48FA272D22CAFDDE007A76EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A3E91122C9A8A600D3392F /* ExampleListViewController.swift in Sources */,
-				48A3E91422C9A8A600D3392F /* Toast.swift in Sources */,
-				4851A0FE22CA0054006B0DF4 /* ResultViewController.swift in Sources */,
-				48A3E8FA22C9A27C00D3392F /* ViewController.swift in Sources */,
-				48A3E91222C9A8A600D3392F /* ExampleListSectionHeaderView.swift in Sources */,
-				48A3E91322C9A8A600D3392F /* ExampleListCell.swift in Sources */,
-				48A3E8F822C9A27C00D3392F /* AppDelegate.swift in Sources */,
+				48FA278F22CAFF50007A76EF /* EncodeParamResponse.swift in Sources */,
+				48FA27AC22CAFF50007A76EF /* ContractAction.swift in Sources */,
+				48FA278D22CAFF50007A76EF /* EmptyResponse.swift in Sources */,
+				48FA27AE22CAFF50007A76EF /* TransferData.swift in Sources */,
+				48FA278C22CAFF50007A76EF /* MYKEYWalletResp.swift in Sources */,
+				48A639F7242F4180003943D8 /* ChainType.swift in Sources */,
+				48FA27A522CAFF50007A76EF /* ContractRequest.swift in Sources */,
+				48FA279922CAFF50007A76EF /* ConfigConstants.swift in Sources */,
+				48FE479222DC69E10087231D /* MKLocalizable.swift in Sources */,
+				48FA27A022CAFF50007A76EF /* BaseRequest.swift in Sources */,
+				48FA27AA22CAFF50007A76EF /* ContractProtocolRequest.swift in Sources */,
+				48FA279822CAFF50007A76EF /* ErrorCode.swift in Sources */,
+				48FA27A922CAFF50007A76EF /* AuthorizeProtocolRequest.swift in Sources */,
+				48FA278522CAFF50007A76EF /* String+extension.swift in Sources */,
+				48FA279322CAFF50007A76EF /* DownloadViewController.swift in Sources */,
+				48FA27C422CCA3D0007A76EF /* MYKEYErrorResponse.swift in Sources */,
+				48FA27AF22CAFF50007A76EF /* BaseAction.swift in Sources */,
+				48FA279722CAFF50007A76EF /* IntentKeyConstants.swift in Sources */,
+				48FA27A622CAFF50007A76EF /* InitRequest.swift in Sources */,
+				48FA278822CAFF50007A76EF /* MYKEYResponse.swift in Sources */,
+				48FA279522CAFF50007A76EF /* WalletActionConstants.swift in Sources */,
+				48FA27A722CAFF50007A76EF /* BaseProtocolRequest.swift in Sources */,
+				48FA279E22CAFF50007A76EF /* MYKEYWalletJni.swift in Sources */,
+				48FA278E22CAFF50007A76EF /* BaseJniResponse.swift in Sources */,
+				48FA278422CAFF50007A76EF /* UIColor+extension.swift in Sources */,
+				48FA279022CAFF50007A76EF /* RequestPubKeyResponse.swift in Sources */,
+				48FA27A122CAFF50007A76EF /* AuthorizeRequest.swift in Sources */,
+				48FA279122CAFF50007A76EF /* DeviceUtil.swift in Sources */,
+				48FA27AB22CAFF50007A76EF /* SignProtocolRequest.swift in Sources */,
+				48FA279B22CAFF50007A76EF /* InitHandle.swift in Sources */,
+				48FA279622CAFF50007A76EF /* RequestHeaderConstants.swift in Sources */,
+				48FA278322CAFF50007A76EF /* UIFont+extension.swift in Sources */,
+				48D2C05E22E80D29004DDAE0 /* InitEntity.swift in Sources */,
+				48FA27B022CAFF50007A76EF /* JniUserAgentRequest.swift in Sources */,
+				48FA278622CAFF50007A76EF /* Dictionary+extension.swift in Sources */,
+				48FA27A322CAFF50007A76EF /* TransferRequest.swift in Sources */,
+				48FA278B22CAFF50007A76EF /* MYKEYApiResponse.swift in Sources */,
+				48C76A84239517870027C6AF /* Double+extension.swift in Sources */,
+				48FA278922CAFF50007A76EF /* CallBackKeyConst.swift in Sources */,
+				48FA278222CAFF50007A76EF /* UIDevice+extension.swift in Sources */,
+				48E85E1822E081B800DC2277 /* RectUtil.swift in Sources */,
+				48FA27A422CAFF50007A76EF /* InitSimpleRequest.swift in Sources */,
+				48FA27A222CAFF50007A76EF /* SignRequest.swift in Sources */,
+				48FA27A822CAFF50007A76EF /* TransferProtocolRequest.swift in Sources */,
+				48FA27AD22CAFF50007A76EF /* TransferAction.swift in Sources */,
+				48FA279A22CAFF50007A76EF /* MYKEYWallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		48A3E8FB22C9A27C00D3392F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48A3E8FC22C9A27C00D3392F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		48A3E90022C9A27D00D3392F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48A3E90122C9A27D00D3392F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		48A3E90422C9A27D00D3392F /* Debug */ = {
+		48FA273722CAFDDE007A76EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -260,6 +523,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -284,13 +548,17 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		48A3E90522C9A27D00D3392F /* Release */ = {
+		48FA273822CAFDDE007A76EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -321,6 +589,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -338,80 +607,109 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		48A3E90722C9A27D00D3392F /* Debug */ = {
+		48FA273A22CAFDDE007A76EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5635U98C3Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MYKEY-SDK-Demo-iOS/SDK",
+					"$(PROJECT_DIR)/MYKEYWalletLib/SDK",
 				);
-				INFOPLIST_FILE = "MYKEY-SDK-Demo-iOS/Info.plist";
+				INFOPLIST_FILE = MYKEYWalletLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MYKEY.MYKEY-SDK-Demo-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = MYKEY.MYKEYWalletLib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s x86_64 i386";
 			};
 			name = Debug;
 		};
-		48A3E90822C9A27D00D3392F /* Release */ = {
+		48FA273B22CAFDDE007A76EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5635U98C3Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MYKEY-SDK-Demo-iOS/SDK",
+					"$(PROJECT_DIR)/MYKEYWalletLib/SDK",
 				);
-				INFOPLIST_FILE = "MYKEY-SDK-Demo-iOS/Info.plist";
+				INFOPLIST_FILE = MYKEYWalletLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MYKEY.MYKEY-SDK-Demo-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = MYKEY.MYKEYWalletLib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s x86_64 i386";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48A3E8EF22C9A27C00D3392F /* Build configuration list for PBXProject "MYKEY-SDK-Demo-iOS" */ = {
+		48FA272B22CAFDDE007A76EF /* Build configuration list for PBXProject "MYKEYWalletLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48A3E90422C9A27D00D3392F /* Debug */,
-				48A3E90522C9A27D00D3392F /* Release */,
+				48FA273722CAFDDE007A76EF /* Debug */,
+				48FA273822CAFDDE007A76EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48A3E90622C9A27D00D3392F /* Build configuration list for PBXNativeTarget "MYKEY-SDK-Demo-iOS" */ = {
+		48FA273922CAFDDE007A76EF /* Build configuration list for PBXNativeTarget "MYKEYWalletLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48A3E90722C9A27D00D3392F /* Debug */,
-				48A3E90822C9A27D00D3392F /* Release */,
+				48FA273A22CAFDDE007A76EF /* Debug */,
+				48FA273B22CAFDDE007A76EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 48A3E8EC22C9A27C00D3392F /* Project object */;
+	rootObject = 48FA272822CAFDDE007A76EF /* Project object */;
 }

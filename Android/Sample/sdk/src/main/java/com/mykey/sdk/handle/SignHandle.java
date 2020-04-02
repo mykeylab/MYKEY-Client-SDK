@@ -25,7 +25,7 @@ public class SignHandle extends BaseHandle {
         signAgreementRequest.setSignUrl(signRequest.getCallBackUrl());
         signAgreementRequest.setAction(WalletActionCons.SIGN);
 
-        fillCommonData(signAgreementRequest, callBackId);
+        fillCommonData(signAgreementRequest, callBackId, signRequest.getChain());
         return JsonUtil.toJson(signAgreementRequest);
     }
 }

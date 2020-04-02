@@ -33,4 +33,13 @@ public class AuthorizeRequest extends BaseRequest {
         this.info = info;
         return this;
     }
+
+    public String getChain() {
+        return chain;
+    }
+
+    public AuthorizeRequest setChain(String chain) {
+        this.chain = chain;
+        return this;
+    }
 }

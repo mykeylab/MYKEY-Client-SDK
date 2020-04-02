@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ContractProtocolRequest extends BaseProtocolRequest {
     private List<BaseAction> actions;
-    // 交易的说明信息，钱包在付款UI展示给用户,可选
+    // optional, description for transaction, will show on wallet before user enter password.
     private String desc;
     private String contractUrl;
 

@@ -5,21 +5,18 @@ package com.mykey.sdk.entity.agreement.request;
  */
 
 public class TransferProtocolRequest extends BaseProtocolRequest {
-    // 付款人的EOS账号，transfer必须
     private String from;
-    // 收款人的EOS账号，transfer必须
     private String to;
-    // 转账数量，transfer必须
     private double amount;
-    // 转账的token所属的contract账号名
+    // contract name of account
     private String contract;
-    // 转账的token名称，transfer必须
+    // name of token
     private String symbol;
-    // 转账的token的精度，小数点后面的位数，transfer必须
+    // decimal of token
     private int precision;
-    // 由dapp生成的业务参数信息，需要钱包在转账时附加在memo中发出去，格式为:k1=v1&k2=v2，可选;钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
+    // memo
     private String dappData;
-    // 交易的说明信息，钱包在付款UI展示给用户，最长不要超过128个字节，可选
+    // description for transaction, will show on wallet before user enter password.
     private String desc;
 
     private String orderId;

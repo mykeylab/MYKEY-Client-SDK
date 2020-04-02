@@ -13,7 +13,7 @@ import com.mykey.sdk.entity.client.request.action.ContractAction;
 import com.mykey.sdk.entity.client.request.action.TransferAction;
 import com.mykey.sdk.entity.client.request.action.data.TransferData;
 import com.mykey.sdk.sample.Config;
-import com.mykey.sdk.sample.entity.BuyRamDataEntity;
+import com.mykey.sdk.sample.entity.eos.BuyRamDataEntity;
 
 import java.util.ArrayList;
 import java.util.List;

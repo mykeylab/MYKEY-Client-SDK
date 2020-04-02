@@ -33,11 +33,6 @@ android {
         }
     }
 
-//    compileOptions {
-//        sourceCompatibility getProject().javaSourceCompatibility
-//        targetCompatibility getProject().javaSourceCompatibility
-//    }
-
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
@@ -55,14 +50,11 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation getProject().appcompatV7
-    implementation "com.alibaba:fastjson:$libVersions.FastJson"
-//    implementation(name: "MyKeyCoreJni", ext: 'aar')
-
-
+    api "com.alibaba:fastjson:$libVersions.FastJson"
+    implementation(name: "MyKeyCoreJni", ext: 'aar')
 
 //    embed "com.alibaba:fastjson:$libVersions.FastJson"
 //    compileOnly "com.alibaba:fastjson:$libVersions.FastJson"
-    embed(name: "MyKeyCoreJni", ext: 'aar')
-    compileOnly (name:'MyKeyCoreJni',ext:'aar')
-
+//    embed(name: "MyKeyCoreJni", ext: 'aar')
+//    compileOnly (name:'MyKeyCoreJni',ext:'aar')
 }

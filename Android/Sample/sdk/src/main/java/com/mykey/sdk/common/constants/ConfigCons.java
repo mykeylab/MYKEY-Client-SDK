@@ -5,10 +5,10 @@ package com.mykey.sdk.common.constants;
  */
 
 public interface ConfigCons {
-    // MYKEY Sdk Version
-    String MYKEY_WALLET_VERSION = "1.0";
+    // MYKEY Protocol Version
+    String MYKEY_PROTOCOL_VERSION = "1.0";
     // SDK Version
-    String SDK_VERSION = "1.0.1";
+    String SDK_VERSION = "1.1.0";
     String DEVICE = "android";
     // Package name of MYKEY
     String MYKEY_PACKAGE_NAME = "com.mykey.id";

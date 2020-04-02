@@ -22,6 +22,16 @@ public abstract class BaseProtocolRequest {
     // just for sdk, used to find callback object
     private String callbackId;
 
+    private String chain;
+
+    public String getChain() {
+        return chain;
+    }
+
+    public void setChain(String chain) {
+        this.chain = chain;
+    }
+
     public String getCallbackId() {
         return callbackId;
     }

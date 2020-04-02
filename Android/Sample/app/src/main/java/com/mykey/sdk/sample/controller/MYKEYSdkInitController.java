@@ -22,7 +22,7 @@ public class MYKEYSdkInitController {
                 .setDappIcon(Config.SAMPLE_DAPP_ICON)
                 .setCallback(Config.SAMPLE_DAPP_CALLBACK)
                 .setDisableInstall(false)
-                .setMYKEYServer("https://app.mykey.tech")
+                .setMYKEYServer("https://dev-app.mykey.tech")
                 .setContext(activity.getApplicationContext()));
     }
 

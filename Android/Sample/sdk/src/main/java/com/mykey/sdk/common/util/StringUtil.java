@@ -64,7 +64,7 @@ public class StringUtil {
         return result;
     }
     /**
-     * 获取UTF-8 encode
+     * UTF-8 encode
      *
      * @param str
      * @return
