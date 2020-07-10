@@ -7,13 +7,13 @@ This Project cotains the source code and demo code of MYKEY Client SDK
 
 ### Android
 
-[English](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY_ANDROID_SDK_EN.md)
+[English](https://docs.mykey.org/v/English/integrate-with-mykey/integration-android)
 
-[中文](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_ANDROID_SDK.md)
+[中文](https://docs.mykey.org/integrate-with-mykey/integration-android)
 
 
 ### iOS
 
-[English](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY_iOS_SDK_EN.md)
+[English](https://docs.mykey.org/v/English/integrate-with-mykey/integration-ios)
 
-[中文](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_iOS_SDK.md)
+[中文](https://docs.mykey.org/integrate-with-mykey/integration-ios)

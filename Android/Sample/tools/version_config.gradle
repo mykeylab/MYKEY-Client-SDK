@@ -1,7 +1,7 @@
 ext {
     javaSourceCompatibility = JavaVersion.VERSION_1_8
-    appVersions = '0.0.1'
-    appCode = 1
+    appVersions = '1.1.0'
+    appCode = 3
     compileSdkVersion = 27
     buildToolsVersion = "27.0.3"
     minSdkVersion = 17
