@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Sdk</string>
     <string name="error.txt.wake_up">Please open MYKEY and upgrade to the latest version</string>
 
     <string name="sdk_download.txt.title">MYKEY has not been installed yet</string>

@@ -13,6 +13,6 @@ public interface Config {
     String SAMPLE_DAPP_APP_KEY = "9mDxSbyR";
     String SAMPLE_DAPP_NAME = "BiHu";
     String SAMPLE_DAPP_ICON = "https://bihu.com/favicon.ico";
-    UUID SAMPLE_DAPP_USER_ID = UUID.fromString("38400001-8cf0-11bd-b23e-10b96e4ef00a");
+    UUID SAMPLE_DAPP_USER_ID = UUID.fromString("7143c696-94eb-4cc4-a8bd-b7309579ac01");
     String SAMPLE_DAPP_CALLBACK = "simple://com.mykey.sdk";
 }

@@ -18,6 +18,7 @@ public class MKUtil {
         try {
             param = URLEncoder.encode(param, "utf-8");
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(ConfigCons.SIMPLE_WALLET_URL_FORMAT, param)));
+            intent.setPackage(ConfigCons.MYKEY_PACKAGE_NAME);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             activity.startActivity(intent);
         } catch (Exception e) {
@@ -28,6 +29,7 @@ public class MKUtil {
     public static void redirectToApp(Activity activity, String url) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.setPackage(ConfigCons.MYKEY_PACKAGE_NAME);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             activity.startActivity(intent);
         } catch (Exception e) {

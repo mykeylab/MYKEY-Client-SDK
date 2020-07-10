@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.mykey.sdk.BuildConfig;
+import com.mykey.sdk.common.iface.LogCallback;
 
 /**
  * Log utils
@@ -19,6 +20,11 @@ public class LogUtil {
      */
     private static final boolean DEFAULT_LOG_STATUS = BuildConfig.DEBUG || isPropertyEnabled(TAG);
     private static boolean sLogStatus = DEFAULT_LOG_STATUS;
+    private static LogCallback logCallback;
+
+    public static void setLogCallback(LogCallback logCallback) {
+        LogUtil.logCallback = logCallback;
+    }
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
@@ -53,17 +59,6 @@ public class LogUtil {
         }
     }
 
-
-    public static void v(String msg) {
-        if (TextUtils.isEmpty(msg)) {
-            return;
-        }
-        if (sLogStatus) {
-            Log.v(TAG, msg);
-        }
-    }
-
-
     public static void v(String tag, String msg) {
         if (TextUtils.isEmpty(msg)) {
             return;
@@ -71,11 +66,8 @@ public class LogUtil {
         if (sLogStatus) {
             Log.v(tag, msg);
         }
-    }
-
-    public static void i(String msg) {
-        if (sLogStatus) {
-            Log.i(TAG, msg);
+        if (null != logCallback) {
+            logCallback.log(tag, msg);
         }
     }
 
@@ -84,14 +76,8 @@ public class LogUtil {
             return;
         }
         Log.i(tag, msg);
-    }
-
-    public static void d(String msg) {
-        if (TextUtils.isEmpty(msg)) {
-            return;
-        }
-        if (sLogStatus) {
-            Log.d(TAG, msg);
+        if (null != logCallback) {
+            logCallback.log(tag, msg);
         }
     }
 
@@ -99,13 +85,9 @@ public class LogUtil {
         if (sLogStatus) {
             Log.d(tag, msg);
         }
-    }
-
-    public static void w(String msg) {
-        if (TextUtils.isEmpty(msg)) {
-            return;
+        if (null != logCallback) {
+            logCallback.log(tag, msg);
         }
-        Log.w(TAG, msg);
     }
 
     public static void w(String tag, String msg) {
@@ -113,13 +95,9 @@ public class LogUtil {
             return;
         }
         Log.w(tag, msg);
-    }
-
-    public static void e(String msg) {
-        if (TextUtils.isEmpty(msg)) {
-            return;
+        if (null != logCallback) {
+            logCallback.log(tag, msg);
         }
-        Log.e(TAG, msg);
     }
 
     public static void e(String tag, String msg) {
@@ -127,13 +105,9 @@ public class LogUtil {
             return;
         }
         Log.e(tag, msg);
-    }
-
-    public static void e(String msg, Throwable e) {
-        if (TextUtils.isEmpty(msg)) {
-            return;
+        if (null != logCallback) {
+            logCallback.log(tag, msg);
         }
-        Log.e(TAG, msg, e);
     }
 
     public static Throwable getStackTrace() {
@@ -141,26 +115,6 @@ public class LogUtil {
         Throwable e = new Throwable();
         e.setStackTrace(stackTrace);
         return e;
-    }
-
-    /**
-     * print long log
-     * @param tag
-     * @param str
-     */
-    public static void eLong(String tag, String str) {
-        if (TextUtils.isEmpty(str)) {
-            return;
-        }
-        if (str.length() > 4000) {
-            for (int i = 0, size = str.length(); i < size; i += 4000) {
-                if (i + 4000 < size) {
-                    Log.e(tag, str.substring(i, i + 4000));
-                } else {
-                    Log.e(tag, str.substring(i, size));
-                }
-            }
-        }
     }
 
 }

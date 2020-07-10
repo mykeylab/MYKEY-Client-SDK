@@ -17,6 +17,7 @@ public class MultiChainManager {
     private static EthChainController ethController = new EthChainController();
 
     public static String getBinaryForContract(String chain, ContractAction action) {
+        LogUtil.i(TAG, "in getBinaryForContract");
         if (null == action) {
             LogUtil.e(TAG, "in getBinaryForContract contractRequest is null.");
             return "";
@@ -25,6 +26,7 @@ public class MultiChainManager {
     }
 
     private static BaseChainController getChainController(String chain) {
+        LogUtil.i(TAG, "in getChainController");
         if (TextUtils.isEmpty(chain)) {
             LogUtil.e(TAG, "in getChainController chain is empty.");
             return eosController;

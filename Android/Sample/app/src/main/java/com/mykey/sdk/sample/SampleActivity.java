@@ -23,7 +23,7 @@ public class SampleActivity extends Activity {
     private Button btnMYKEYAuthorize, btnSimpleWalletAuthorize, btnMYKEYContract, btnSimpleWalletContract, btnMYKEYTransfer, btnSimpleWalletTransfer, btnMYKEYSign, btnSimpleWalletSign;
     private Button btnGetBalance, btnGetUnlockList, btnGetBindInfo;
     private Button btnStake, btnUnStake, btnTransfer, btnTransferAndStake, btnUnStakeAndTransfer;
-    private Button btnMYKEYEthAuthorize, btnMYKEYEthContract, btnMYKEYEthTransferEth, btnMYKEYEthTransferErc20, btnMYKEYEthSign;
+    private Button btnMYKEYEthAuthorize, btnMYKEYEthContract, btnMYKEYEthContractTransfer, btnMYKEYEthContractMulti, btnMYKEYEthTransferEth, btnMYKEYEthTransferErc20, btnMYKEYEthSign;
 
     private MYKEYSdkInitController mykeySdkInitController;
     private SimpleWalletController simpleWalletController;
@@ -64,6 +64,8 @@ public class SampleActivity extends Activity {
 
         btnMYKEYEthAuthorize = findViewById(R.id.sample_authorize_mykey_eth);
         btnMYKEYEthContract = findViewById(R.id.sample_contract_mykey_eth);
+        btnMYKEYEthContractTransfer = findViewById(R.id.sample_contract_and_transfer_eth_mykey_eth);
+        btnMYKEYEthContractMulti = findViewById(R.id.sample_contract_multi_mykey_eth);
         btnMYKEYEthTransferEth = findViewById(R.id.sample_transfer_mykey_eth);
         btnMYKEYEthTransferErc20 = findViewById(R.id.sample_transfer_mykey_erc20);
         btnMYKEYEthSign = findViewById(R.id.sample_sign_mykey_eth);
@@ -106,6 +108,8 @@ public class SampleActivity extends Activity {
 
         btnMYKEYEthAuthorize.setOnClickListener(onClickListener);
         btnMYKEYEthContract.setOnClickListener(onClickListener);
+        btnMYKEYEthContractTransfer.setOnClickListener(onClickListener);
+        btnMYKEYEthContractMulti.setOnClickListener(onClickListener);
         btnMYKEYEthTransferEth.setOnClickListener(onClickListener);
         btnMYKEYEthTransferErc20.setOnClickListener(onClickListener);
         btnMYKEYEthSign.setOnClickListener(onClickListener);
@@ -174,6 +178,10 @@ public class SampleActivity extends Activity {
                 mykeyWalletEthController.onAuthorize();
             } else if (view == btnMYKEYEthContract) {
                 mykeyWalletEthController.onMyKeyContract();
+            } else if (view == btnMYKEYEthContractTransfer) {
+                mykeyWalletEthController.onMyKeyContractAndEthTransfer();
+            } else if (view == btnMYKEYEthContractMulti) {
+                mykeyWalletEthController.onMyKeyContractMulti();
             } else if (view == btnMYKEYEthTransferEth) {
                 mykeyWalletEthController.onMyKeyTransferEth();
             } else if (view == btnMYKEYEthTransferErc20) {

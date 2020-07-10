@@ -8,6 +8,7 @@ import com.mykey.sdk.common.manager.MultiChainManager;
 import com.mykey.sdk.common.store.memory.MemoryManager;
 import com.mykey.sdk.common.store.sharepreference.SPManager;
 import com.mykey.sdk.common.util.JsonUtil;
+import com.mykey.sdk.common.util.NumberUtil;
 import com.mykey.sdk.connect.scheme.SchemeConnectManager;
 import com.mykey.sdk.connect.scheme.callback.MYKEYCallbackManager;
 import com.mykey.sdk.connect.scheme.callback.MYKEYWalletCallback;
@@ -64,6 +65,10 @@ public class ContractHandle extends BaseHandle {
             // if action is ContractAction and binary is empty, set binary by chain
             if (action instanceof ContractAction && TextUtils.isEmpty(((ContractAction) action).getBinary())) {
                 ((ContractAction) action).setBinary(MultiChainManager.getBinaryForContract(chain, (ContractAction) action));
+            }
+            // build to quantity for MYKEY
+            if (action instanceof ContractAction && ((ContractAction) action).getAmount() != 0 && !TextUtils.isEmpty(((ContractAction) action).getSymbol())) {
+                ((ContractAction) action).setQuantity(NumberUtil.deleteScientificCounting(((ContractAction) action).getAmount()) + " " + ((ContractAction) action).getSymbol());
             }
             // set chain
             action.setChain(chain);

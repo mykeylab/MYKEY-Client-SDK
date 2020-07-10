@@ -10,6 +10,36 @@ public class ContractAction extends BaseAction {
     private Object data;
     private String abi;
     private String binary;
+    // Now just for ETH，call contract and transfer eth at the same time.
+    private double amount;
+    private String symbol;
+    private String quantity;
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public ContractAction setSymbol(String symbol) {
+        this.symbol = symbol;
+        return this;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public ContractAction setAmount(double amount) {
+        this.amount = amount;
+        return this;
+    }
 
     public String getBinary() {
         return binary;

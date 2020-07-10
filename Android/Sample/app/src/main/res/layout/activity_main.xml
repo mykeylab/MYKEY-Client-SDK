@@ -260,6 +260,32 @@
                 app:layout_constraintTop_toBottomOf="@+id/sample_authorize_mykey_eth"/>
 
             <Button
+                android:id="@+id/sample_contract_and_transfer_eth_mykey_eth"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Contract And Transfer ETH"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_contract_mykey_eth"/>
+
+            <Button
+                android:id="@+id/sample_contract_multi_mykey_eth"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:text="MYKEY Contract Multi ETH"
+                android:textSize="12sp"
+                android:textColor="@color/mykey_title_black_light"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sample_contract_and_transfer_eth_mykey_eth"/>
+
+            <Button
                 android:id="@+id/sample_transfer_mykey_eth"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
@@ -270,7 +296,7 @@
                 android:textAllCaps="false"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sample_contract_mykey_eth"/>
+                app:layout_constraintTop_toBottomOf="@+id/sample_contract_multi_mykey_eth"/>
 
             <Button
                 android:id="@+id/sample_transfer_mykey_erc20"

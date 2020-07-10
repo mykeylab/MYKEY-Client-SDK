@@ -3,6 +3,7 @@ package com.mykey.sdk.entity.client.request;
 import android.content.Context;
 
 import com.mykey.sdk.common.constants.ConfigCons;
+import com.mykey.sdk.common.iface.LogCallback;
 
 import java.util.UUID;
 
@@ -27,6 +28,8 @@ public class InitRequest {
     // Do not display prompt for contract action except transfer
     private boolean contractPromptFree = false;
 
+    private LogCallback logCallback;
+
     public InitRequest() {
     }
 
@@ -39,6 +42,16 @@ public class InitRequest {
         this.callback = initSimpleRequest.getCallback();
         this.showUpgradeTip = initSimpleRequest.isShowUpgradeTip();
         this.contractPromptFree = initSimpleRequest.isContractPromptFree();
+        this.logCallback = initSimpleRequest.getLogCallback();
+    }
+
+    public LogCallback getLogCallback() {
+        return logCallback;
+    }
+
+    public InitRequest setLogCallback(LogCallback logCallback) {
+        this.logCallback = logCallback;
+        return this;
     }
 
     public boolean isContractPromptFree() {

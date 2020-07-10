@@ -53,6 +53,7 @@ public class ServiceConnectManager {
     }
 
     public void sendToMYKEY(Context context, String param, MYKEYWalletCallback mykeyWalletCallback) {
+        LogUtil.i(TAG, "in sendToMYKEY");
         this.context = context;
         if (null == mykeyPushMessenger) {
             sendToMYKEYWhenUnbind(context, param, mykeyWalletCallback);
@@ -72,6 +73,7 @@ public class ServiceConnectManager {
     }
 
     private void sendToMYKEYWhenUnbind(Context context, String param, MYKEYWalletCallback mykeyWalletCallback) {
+        LogUtil.i(TAG, "in sendToMYKEYWhenUnbind");
         boolean bindResult = bindService();
         if (bindResult) {
             // bind return success, but need to delay connect success, so delay to send
@@ -85,6 +87,7 @@ public class ServiceConnectManager {
     }
 
     private void delaySend(final Context context, final String param, final MYKEYWalletCallback mykeyWalletCallback) {
+        LogUtil.i(TAG, "in delaySend");
         HandlerManager.getInstance().postMainDelay(new Runnable() {
             @Override
             public void run() {
@@ -105,6 +108,7 @@ public class ServiceConnectManager {
             return bindResult;
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtil.i(TAG, "in bindService exception:" + e.getMessage());
             return false;
         }
     }
@@ -127,14 +131,14 @@ public class ServiceConnectManager {
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            LogUtil.i(TAG, "ServiceConnection-->" + System.currentTimeMillis());
+            LogUtil.i(TAG, "in connection ServiceConnection-->" + System.currentTimeMillis());
             // create push messenger when had connected to server
             mykeyPushMessenger = new Messenger(iBinder);
         }
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
-            LogUtil.i(TAG, "onServiceDisconnected-->binder died");
+            LogUtil.i(TAG, "in connection onServiceDisconnected-->binder died");
             mykeyPushMessenger = null;
         }
     };

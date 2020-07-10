@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/mykey_theme_active</item>
-        <item name="colorPrimaryDark">@color/mykey_theme_active</item>
+<!--        <item name="colorPrimary">@color/mykey_theme_active</item>-->
+<!--        <item name="colorPrimaryDark">@color/mykey_theme_active</item>-->
         <!--<item name="colorAccent">@color/colorAccent</item>-->
         <!--<item name="android:windowBackground">@drawable/bg_welcome</item>-->
         <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
-    <style name="MyKeyActivity" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    <style name="MyKeyActivity">
+<!--        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>-->
+<!--        <item name="actionBarWidgetTheme">@null</item>-->
+<!--        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>-->
         <item name="android:windowBackground">@color/mykey_page_top_bg</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 </resources>

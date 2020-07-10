@@ -3,10 +3,16 @@ package com.mykey.sdk.entity.client.request;
 import android.content.Context;
 
 import com.mykey.sdk.common.constants.ConfigCons;
+import com.mykey.sdk.common.iface.LogCallback;
+
+import java.util.UUID;
 
 public class InitSimpleRequest {
+    private UUID uuid;
     private String protocol = ConfigCons.MYKEY_SIMPLE_WALLET_PROTOCOL;
     private Context context;
+    // optional
+    private String appKey;
     private String dappName;
     private String dappIcon;
     // Whether to disable the default install page when MYKEY is not installed
@@ -14,8 +20,46 @@ public class InitSimpleRequest {
     private boolean showUpgradeTip = false;
     // Deeplink MYKEY callback to dapp,defined in AndroidManifest.xml, e.g. customscheme://customhost/custompath
     private String callback;
+    private String mykeyServer;
     // Do not display prompt for contract action except transfer
     private boolean contractPromptFree = false;
+    private LogCallback logCallback;
+
+    public LogCallback getLogCallback() {
+        return logCallback;
+    }
+
+    public InitSimpleRequest setLogCallback(LogCallback logCallback) {
+        this.logCallback = logCallback;
+        return this;
+    }
+
+    public String getMykeyServer() {
+        return mykeyServer;
+    }
+
+    public InitSimpleRequest setMykeyServer(String mykeyServer) {
+        this.mykeyServer = mykeyServer;
+        return this;
+    }
+
+    public String getAppKey() {
+        return appKey;
+    }
+
+    public InitSimpleRequest setAppKey(String appKey) {
+        this.appKey = appKey;
+        return this;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public InitSimpleRequest setUuid(UUID uuid) {
+        this.uuid = uuid;
+        return this;
+    }
 
     public boolean isContractPromptFree() {
         return contractPromptFree;

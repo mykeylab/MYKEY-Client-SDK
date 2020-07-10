@@ -22,16 +22,20 @@ public class MYKEYSdkInitController {
                 .setDappIcon(Config.SAMPLE_DAPP_ICON)
                 .setCallback(Config.SAMPLE_DAPP_CALLBACK)
                 .setDisableInstall(false)
-                .setMYKEYServer("https://dev-app.mykey.tech")
+                .setMYKEYServer("https://dev-open.mykey.tech")
                 .setContext(activity.getApplicationContext()));
     }
 
     public void initSdkSimple() {
         MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAMPLE_DAPP_NAME)
+                // app key is optional, if you set, will use, otherwise use default prefix and dapp name
+                .setAppKey(Config.SAMPLE_DAPP_APP_KEY)
                 .setDappIcon(Config.SAMPLE_DAPP_ICON)
                 .setCallback(Config.SAMPLE_DAPP_CALLBACK)
                 .setDisableInstall(false)
                 .setContractPromptFree(true)
-                .setContext(activity.getApplicationContext()));
+                .setContext(activity.getApplicationContext())
+                // uuid is optional, if you set, will use.
+                .setUuid(Config.SAMPLE_DAPP_USER_ID));
     }
 }

@@ -11,7 +11,7 @@ android {
         versionCode getProject().appCode
         versionName getProject().appVersions
         ndk {
-            abiFilters "armeabi-v7a"
+            abiFilters "armeabi-v7a", 'arm64-v8a'
         }
     }
 
@@ -51,10 +51,10 @@ dependencies {
 
     implementation getProject().appcompatV7
     api "com.alibaba:fastjson:$libVersions.FastJson"
-    implementation(name: "MyKeyCoreJni", ext: 'aar')
+//    implementation(name: "MyKeyCoreJni", ext: 'aar')
 
 //    embed "com.alibaba:fastjson:$libVersions.FastJson"
 //    compileOnly "com.alibaba:fastjson:$libVersions.FastJson"
-//    embed(name: "MyKeyCoreJni", ext: 'aar')
-//    compileOnly (name:'MyKeyCoreJni',ext:'aar')
+    embed(name: "MyKeyCoreJni", ext: 'aar')
+    compileOnly (name:'MyKeyCoreJni',ext:'aar')
 }

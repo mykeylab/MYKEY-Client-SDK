@@ -34,7 +34,6 @@ public class StakeTokenExampleController {
                 .setInfo("Execute contract lock 1.0000 ADD")
                 .setData(new StakeEntity().setOwner("bobbobbobbob").setQuantity("1.0000 ADD"));
         contractRequest.addAction(contractActionRequest);
-
         MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
             @Override
             public void onSuccess(String dataJson) {

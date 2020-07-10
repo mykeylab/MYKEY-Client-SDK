@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.mykey.sdk.common.constants.ConfigCons;
 import com.mykey.sdk.common.constants.StoreKeyCons;
 import com.mykey.sdk.common.store.memory.MemoryManager;
+import com.mykey.sdk.common.util.LogUtil;
 import com.mykey.sdk.common.util.MD5Util;
 import com.mykey.sdk.common.util.SystemUtil;
 import com.mykey.sdk.connect.service.ServiceConnectManager;
@@ -36,6 +37,8 @@ public class InitHandle {
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_PROTOCOL, initRequest.getProtocol());
         MemoryManager.set(StoreKeyCons.MEMORY_KEY_PROMPTFREE_CONTRACT, initRequest.isContractPromptFree());
 
+        LogUtil.setLogCallback(initRequest.getLogCallback());
+
         // Prepare the underlying library to initialize the data
         InitEntity initEntity = new InitEntity();
         initEntity.setAppKey(initRequest.getAppKey());
@@ -55,12 +58,22 @@ public class InitHandle {
     }
 
     public void handle(Context context, InitSimpleRequest initSimpleRequest) {
-        // Generate simple's appkey and userid
-        String simpleAppKey = MD5Util.getMD5String(ConfigCons.MYKEY_SIMPLE_WALLET_APP_KEY_PREFIX + initSimpleRequest.getDappName());
+        String simpleAppKey = null;
+        if (TextUtils.isEmpty(initSimpleRequest.getAppKey())) {
+            // Generate simple's appkey and userid
+            simpleAppKey = MD5Util.getMD5String(ConfigCons.MYKEY_SIMPLE_WALLET_APP_KEY_PREFIX + initSimpleRequest.getDappName());
+        } else {
+            simpleAppKey = initSimpleRequest.getAppKey();
+        }
         String simpleUserId = SystemUtil.getUUID();
         InitRequest initRequest = new InitRequest(initSimpleRequest);
         initRequest.setAppKey(simpleAppKey);
-        initRequest.setUuid(new UUID(simpleUserId.hashCode(), simpleUserId.hashCode()));
+        // if uuid had been set by init simple, then direct set.
+        if (null == initSimpleRequest.getUuid()) {
+            initRequest.setUuid(new UUID(simpleUserId.hashCode(), simpleUserId.hashCode()));
+        } else {
+            initRequest.setUuid(initSimpleRequest.getUuid());
+        }
 
         handle(context, initRequest);
     }
